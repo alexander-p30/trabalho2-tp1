@@ -3,7 +3,20 @@
 using namespace std;
 
 /** 
- * Método construtor da classe Cep.
+ * Método construtor para classe Cep.
+ * @param cepNumber Número inteiro a ser validade pelo método setNumber().
+ * @throw invalid_argument Lança exceção caso parâmetro não esteja de acordo com o método setNumber().
+*/
+Cep::Cep(int cepNumber) {
+  try {
+    setNumber(cepNumber);
+  } catch(const invalid_argument& err) {
+    throw invalid_argument(err.what());
+  }
+}
+
+/** 
+ * Método setter de número de Cep.
  * @param cepNumber Número de cpf a ser guardado na classe. É um número inteiro, que deve estar contido
  * em um dos seguintes invervalos: [1000000,5999999], 
  * [8000000,8499999], 
@@ -14,7 +27,7 @@ using namespace std;
  * @throw invalid_argument Se o método de validação do número falhar, lança exceção.
  * 
 */
-Cep::Cep(int cepNumber) {
+void Cep::setNumber(int cepNumber) {
   try{
     if(validar(cepNumber)){ 
       number = cepNumber;
@@ -57,11 +70,24 @@ int Cep::getNumber() const {
 }
 
 /** 
- * Método construtor da classe CodigoDeAgencia.
+ * Método construtor para classe CodigoDeAgencia.
+ * @param code String a ser validada pelo método setCode().
+ * @throw invalid_argument Lança exceção caso parâmetro não esteja de acordo com o método setCode().
+*/
+CodigoDeAgencia::CodigoDeAgencia(string code) {
+  try {
+    setCode(code);
+  } catch(const invalid_argument& err) {
+    throw invalid_argument(err.what());
+  }
+}
+
+/** 
+ * Método setter para código de agência.
  * @param code Representa o código de agência. Deve estar no formato XXXX, numérico, diferente de 0000.
  * @throw invalid_argument Lança exceção se formato do parâmetro não estiver correto.
 */
-CodigoDeAgencia::CodigoDeAgencia(string code) {
+void CodigoDeAgencia::setCode(string code) {
   try{
     if(validar(code)){ 
       this->code = code;
@@ -90,12 +116,25 @@ string CodigoDeAgencia::getCode() const {
 }
 
 /** 
- * Método construtor da classe CodigoDeBanco.
+ * Método construtor para classe CodigoDeBanco.
+ * @param code String a ser validada pelo método setCode().
+ * @throw invalid_argument Lança exceção caso parâmetro não esteja de acordo com o método setCode().
+*/
+CodigoDeBanco::CodigoDeBanco(string code) {
+  try {
+    setCode(code);
+  } catch(const invalid_argument& err) {
+    throw invalid_argument(err.what());
+  }
+}
+
+/** 
+ * Método setter para valor de código de banco.
  * @param code Representa o código de banco. Deve estar no formato XXX, numérico, 
  * e deve ser igual a um dos seguintes valores {001, 033, 104, 237, 341}.
  * @throw invalid_argument Lança exceção se formato do parâmetro não estiver correto.
 */
-CodigoDeBanco::CodigoDeBanco(string code) {
+void CodigoDeBanco::setCode(string code) {
   try{
     if(validar(code)){ 
       this->code = code;

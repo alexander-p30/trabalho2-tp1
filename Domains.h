@@ -9,6 +9,7 @@ private:
   bool validar(int cepNumber) const;
 public:
   Cep(int cepNumber);
+  void setNumber(int cepNumber);
   int getNumber() const;
 };
 
@@ -21,6 +22,7 @@ private:
   bool validar(string code) const;
 public:
   CodigoDeAgencia(string code);
+  void setCode(string code);
   string getCode() const;
 };
 
@@ -33,6 +35,7 @@ private:
   bool validar(string code) const;
 public:
   CodigoDeBanco(string code);
+  void setCode(string code);
   string getCode() const;
 };
 
