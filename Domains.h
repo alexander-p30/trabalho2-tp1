@@ -1,28 +1,39 @@
 #include <string>
 using namespace std;
 /** 
- * Classe de números de CPF
+ * Classe de domínio para números de Cep.
 */
 class Cep {
 private:
   int number;
-  bool validar(int cepNumber);
+  bool validar(int cepNumber) const;
 public:
   Cep(int cepNumber);
-  int getNumber();
+  int getNumber() const;
 };
 
+/** 
+ * Classe de domínio para códigos de agência.
+*/
 class CodigoDeAgencia {
 private:
   string code;
-  bool validar(string code);
+  bool validar(string code) const;
 public:
   CodigoDeAgencia(string code);
-  string getCode();
+  string getCode() const;
 };
 
+/** 
+ * Classe de domínio para códigos de banco.
+*/
 class CodigoDeBanco {
-
+private:
+  string code;
+  bool validar(string code) const;
+public:
+  CodigoDeBanco(string code);
+  string getCode() const;
 };
 
 class CPF {
