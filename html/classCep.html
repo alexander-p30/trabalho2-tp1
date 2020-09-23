@@ -73,16 +73,18 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Membros públicos</h2></td></tr>
-<tr class="memitem:a43878a2590de504b99cad362f84be95a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCep.html#a43878a2590de504b99cad362f84be95a">Cep</a> (int cepNumber)</td></tr>
-<tr class="separator:a43878a2590de504b99cad362f84be95a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8e58ef739952d26df8f21f0b3cea4b9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCep.html#aa8e58ef739952d26df8f21f0b3cea4b9">getNumber</a> () const</td></tr>
-<tr class="separator:aa8e58ef739952d26df8f21f0b3cea4b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28c95d3475554ccfb2b05ad93296839f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCep.html#a28c95d3475554ccfb2b05ad93296839f">Cep</a> (int numeroCep)</td></tr>
+<tr class="separator:a28c95d3475554ccfb2b05ad93296839f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8588edde214c91f80123cd3849f8f570"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCep.html#a8588edde214c91f80123cd3849f8f570">setNumero</a> (int numeroCep)</td></tr>
+<tr class="separator:a8588edde214c91f80123cd3849f8f570"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f56b0df9a77fef5202e746e2fda066b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCep.html#a2f56b0df9a77fef5202e746e2fda066b">getNumero</a> () const</td></tr>
+<tr class="separator:a2f56b0df9a77fef5202e746e2fda066b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
 <div class="textblock"><p>Classe de domínio para números de <a class="el" href="classCep.html">Cep</a>. </p>
 </div><h2 class="groupheader">Documentação dos Construtores &amp; Destrutor</h2>
-<a id="a43878a2590de504b99cad362f84be95a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a43878a2590de504b99cad362f84be95a">&#9670;&nbsp;</a></span>Cep()</h2>
+<a id="a28c95d3475554ccfb2b05ad93296839f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28c95d3475554ccfb2b05ad93296839f">&#9670;&nbsp;</a></span>Cep()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -91,14 +93,63 @@ Membros públicos</h2></td></tr>
           <td class="memname">Cep::Cep </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>cepNumber</em></td><td>)</td>
+          <td class="paramname"><em>numeroCep</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método construtor da classe <a class="el" href="classCep.html">Cep</a>. </p><dl class="params"><dt>Parâmetros</dt><dd>
+<p>Método construtor para classe <a class="el" href="classCep.html">Cep</a>. </p><dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
-    <tr><td class="paramname">cepNumber</td><td>Número de cpf a ser guardado na classe. É um número inteiro, que deve estar contido em um dos seguintes invervalos: [1000000,5999999], [8000000,8499999], [20000000,26600999], [70000000,70999999], [40000000,41999999], [60000000,60999999] </td></tr>
+    <tr><td class="paramname">numeroCep</td><td>Número inteiro a ser validade pelo método <a class="el" href="classCep.html#a8588edde214c91f80123cd3849f8f570">setNumero()</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Excepções</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">invalid_argument</td><td>Lança exceção caso parâmetro não esteja de acordo com o método <a class="el" href="classCep.html#a8588edde214c91f80123cd3849f8f570">setNumero()</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Documentação dos métodos</h2>
+<a id="a2f56b0df9a77fef5202e746e2fda066b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f56b0df9a77fef5202e746e2fda066b">&#9670;&nbsp;</a></span>getNumero()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Cep::getNumero </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Método para acessar o número de <a class="el" href="classCep.html">Cep</a> guardado. </p><dl class="section return"><dt>Retorna</dt><dd>Inteiro com número do <a class="el" href="classCep.html">Cep</a>. </dd></dl>
+
+</div>
+</div>
+<a id="a8588edde214c91f80123cd3849f8f570"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8588edde214c91f80123cd3849f8f570">&#9670;&nbsp;</a></span>setNumero()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Cep::setNumero </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>numeroCep</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Método setter de número de <a class="el" href="classCep.html">Cep</a>. </p><dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">numeroCep</td><td>Número de cpf a ser guardado na classe. É um número inteiro, que deve estar contido em um dos seguintes invervalos: [1000000,5999999], [8000000,8499999], [20000000,26600999], [70000000,70999999], [40000000,41999999], [60000000,60999999] </td></tr>
   </table>
   </dd>
 </dl>
@@ -108,25 +159,6 @@ Membros públicos</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<h2 class="groupheader">Documentação dos métodos</h2>
-<a id="aa8e58ef739952d26df8f21f0b3cea4b9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa8e58ef739952d26df8f21f0b3cea4b9">&#9670;&nbsp;</a></span>getNumber()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int Cep::getNumber </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Método para acessar o número de <a class="el" href="classCep.html">Cep</a> guardado. </p><dl class="section return"><dt>Retorna</dt><dd>Inteiro com número do <a class="el" href="classCep.html">Cep</a>. </dd></dl>
 
 </div>
 </div>
