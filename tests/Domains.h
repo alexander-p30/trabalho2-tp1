@@ -7,8 +7,8 @@ using namespace std;
 */
 class TUCep {
 private:
-  static const int CEP_VALIDO = 1562348;
-  static const int CEP_INVALIDO = 10000;
+  static const int CEP_VALIDO[6];
+  static const int CEP_INVALIDO;
   
   int estado;
   Cep *cep;
@@ -27,7 +27,7 @@ public:
 */
 class TUCodigoDeAgencia {
 private:
-  static const string CODIGO_VALIDO;
+  static const string CODIGO_VALIDO[3];
   static const string CODIGO_INVALIDO;
   
   int estado;
@@ -47,7 +47,7 @@ public:
 */
 class TUCodigoDeBanco {
 private:
-  static const string CODIGO_VALIDO;
+  static const string CODIGO_VALIDO[5];
   static const string CODIGO_INVALIDO;
   
   int estado;
@@ -67,7 +67,19 @@ public:
 */
 class TUCpf {
 private:
+  static const string CPF_VALIDO[5];
+  static const string CPF_INVALIDO;
+  
+  int estado;
+  Cpf *cpf;
+  
+  void cenarioValido();
+  void cenarioInvalido();
 public:
+  TUCpf();
+  int executar();
+  static const int SUCESSO = 1;
+  static const int FALHA = 0;
 };
 
 /** 
