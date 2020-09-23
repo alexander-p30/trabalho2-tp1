@@ -6,11 +6,11 @@ using namespace std;
 class Cep {
 private:
   int number;
-  bool validar(int cepNumber) const;
+  bool validar(int numeroCep) const;
 public:
-  Cep(int cepNumber);
-  void setNumber(int cepNumber);
-  int getNumber() const;
+  Cep(int numeroCep);
+  void setNumero(int numeroCep);
+  int getNumero() const;
 };
 
 /** 
@@ -18,12 +18,12 @@ public:
 */
 class CodigoDeAgencia {
 private:
-  string code;
-  bool validar(string code) const;
+  string codigo;
+  bool validar(string codigo) const;
 public:
-  CodigoDeAgencia(string code);
-  void setCode(string code);
-  string getCode() const;
+  CodigoDeAgencia(string codigo);
+  void setCodigo(string codigo);
+  string getCodigo() const;
 };
 
 /** 
@@ -31,34 +31,50 @@ public:
 */
 class CodigoDeBanco {
 private:
-  string code;
-  bool validar(string code) const;
+  string codigo;
+  bool validar(string codigo) const;
 public:
-  CodigoDeBanco(string code);
-  void setCode(string code);
-  string getCode() const;
+  CodigoDeBanco(string codigo);
+  void setCodigo(string codigo);
+  string getCodigo() const;
 };
 
-class CPF {
-
+class Cpf {
+private:
+  string cpfNumber;
+  bool validar(string cpfNumber) const;
+public:
+  Cpf(string cpfNumber);
+  void setNumero(string cpfNumber);
+  string getNumero() const;
 };
 
 class Emissor {
-
+private:
+  string codigo;
+  bool validar(string codigo) const;
+public:
+  Emissor(string codigo);
+  void setCodigo(string codigo);
+  string getCodigo() const;
 };
 
 class Horario {
-
+private:
+public:
 };
 
 class Numero {
-
+private:
+public:
 };
 
 class Senha {
-
+private:
+public:
 };
 
 class ValorDeAplicacao {
-
+private:
+public:
 };
