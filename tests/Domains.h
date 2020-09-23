@@ -147,7 +147,19 @@ public:
 */
 class TUSenha {
 private:
+  static const string SENHA_VALIDA[3];
+  static const string SENHA_INVALIDA;
+  
+  int estado;
+  Senha *senha;
+  
+  void cenarioValido();
+  void cenarioInvalido();
 public:
+  TUSenha();
+  int executar();
+  static const int SUCESSO = 1;
+  static const int FALHA = 0;
 };
 
 /** 

@@ -345,3 +345,53 @@ int TUNumeroDeConta::executar() {
 
   return estado;
 }
+
+// Inicialização das variáveis de classe para teste unitário de número de conta.
+const string TUSenha::SENHA_VALIDA[3] = {"876543",
+                                        "132650",
+                                        "946127"};
+const string TUSenha::SENHA_INVALIDA = "516277";
+
+/** 
+ * Método construtor para a classe de teste de unidade para NumeroDeConta.
+*/
+TUSenha::TUSenha() {
+  estado = SUCESSO;
+  senha = new Senha();
+}
+
+void TUSenha::cenarioValido() {
+  try {
+    const int tamanhoArr = 3;
+    int i = 0;
+    for(i = 0; i <= tamanhoArr - 1; i++) {
+      senha->setSenha(SENHA_VALIDA[i]);
+    }
+  } catch(const invalid_argument& err) {
+    estado = FALHA;
+  }
+}
+
+void TUSenha::cenarioInvalido() {
+  try {
+    senha->setSenha(SENHA_INVALIDA);
+    estado = FALHA;
+  } catch(const invalid_argument& err) {
+    return;
+  }
+}
+
+/** 
+ * Método de execução de teste de unidade para domínio Senha. São executados dois testes:
+ * - Um para valor válido para senha;
+ * - Um para valor inválido para senha.
+ * @return 1 Caso todos os testes tenham obtido sucesso.
+ * @return 2 Caso pelo menos um dos testes tenha obtido falha.
+*/
+int TUSenha::executar() {
+  cenarioValido();
+  cenarioInvalido();
+  delete senha;
+
+  return estado;
+}
