@@ -81,7 +81,12 @@ public:
 
 class Senha {
 private:
+  string senha;
+  bool validar(string senha) const;
 public:
+  Senha(string senha);
+  void setSenha(string senha);
+  string getSenha() const;
 };
 
 class ValorDeAplicacao {

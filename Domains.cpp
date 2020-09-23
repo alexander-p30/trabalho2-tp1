@@ -442,3 +442,62 @@ bool NumeroDeConta::validar(string numero) const {
 string NumeroDeConta::getNumero() const {
   return numero;
 }
+
+/** 
+ * Método construtor para classe Senha.
+ * @param senha String a ser validada pelo método setSenha().
+ * @throw invalid_argument Lança exceção caso parâmetro não esteja de acordo com o método setSenha().
+*/
+Senha::Senha(string senha) {
+  try {
+    setSenha(senha);
+  } catch(const invalid_argument& err) {
+    throw invalid_argument(err.what());
+  }
+}
+
+/** 
+ * Método setter para senha.
+ * @param senha String no formato "XXXXXX" composta somente por dígitos (0 a 9) não repetidos.
+ * @throw invalid_argument Lança exceção caso o formato não seja obedecido, ou o dígito verificador
+ * seja inválido. 
+*/
+void Senha::setSenha(string senha) {
+  try{
+    if(validar(senha)){ 
+      this->senha = senha;
+    } else {
+      throw invalid_argument("valor informado para senha não condiz com requisitos mínimos.");
+    }
+  } catch(const invalid_argument& err) {
+    cerr << "Argumento inválido: " << err.what() << endl;
+  }
+}
+
+bool Senha::validar(string senha) const {
+  const int tamanhoSenha = senha.length();
+
+  if(tamanhoSenha != 6) {
+    return false;
+  }
+
+  int i = 0, j = 0;
+
+  for(i = 0; i <= tamanhoSenha - 2; i++) {
+    for(j = i + 1; j <= tamanhoSenha - 1; j++) {
+      if(senha[i] == senha[j]) {
+        return false;
+      }
+    }
+  }
+
+  return true;
+}
+
+/** 
+ * Método getter para senha.
+ * @return Retorna string com formato "XXXXXX", sendo composto somente por dígitos (0 a 9) não repetidos.
+*/
+string Senha::getSenha() const {
+  return senha;
+}
