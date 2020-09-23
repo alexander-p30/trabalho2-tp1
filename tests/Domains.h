@@ -67,7 +67,7 @@ public:
 */
 class TUCpf {
 private:
-  static const string CPF_VALIDO[5];
+  static const string CPF_VALIDO[3];
   static const string CPF_INVALIDO;
   
   int estado;

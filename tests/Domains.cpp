@@ -145,3 +145,53 @@ int TUCodigoDeBanco::executar() {
 
   return estado;
 }
+
+// Inicialização das variáveis de classe para teste unitário de CPF.
+const string TUCpf::CPF_VALIDO[3] = {"031.360.531-92",
+                                     "733.119.790-87",
+                                     "153.364.230-33"};
+const string TUCpf::CPF_INVALIDO = "002";
+
+/** 
+ * Método construtor para a classe de teste de unidade para CódigoDeAgencia.
+*/
+TUCpf::TUCpf() {
+  estado = SUCESSO;
+  cpf = new Cpf();
+}
+
+void TUCpf::cenarioValido() {
+  try {
+    const int tamanhoArr = 3;
+    int i = 0;
+    for(i = 0; i <= tamanhoArr - 1; i++) {
+      cpf->setNumero(CPF_VALIDO[i]);
+    }
+  } catch(const invalid_argument& err) {
+    estado = FALHA;
+  }
+}
+
+void TUCpf::cenarioInvalido() {
+  try {
+    cpf->setNumero(CPF_INVALIDO);
+    estado = FALHA;
+  } catch(const invalid_argument& err) {
+    return;
+  }
+}
+
+/** 
+ * Método de execução de teste de unidade para domínio CEP. São executados dois testes:
+ * - Um para valor válido para CEP;
+ * - Um para valor inválido para CEP
+ * @return 1 Caso todos os testes tenham obtido sucesso.
+ * @return 2 Caso pelo menos um dos testes tenha obtido falha.
+*/
+int TUCpf::executar() {
+  cenarioValido();
+  cenarioInvalido();
+  delete cpf;
+
+  return estado;
+}
