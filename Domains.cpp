@@ -291,9 +291,6 @@ bool Emissor::validar(string codigo) const {
   bool validaPrimeiroCarac = isalpha(codigo[0]) && islower(codigo[0]);
 
   if(validaComprimento || validaPrimeiroCarac) {
-    cout << comprimentoCodigo << endl;
-    cout << validaComprimento << endl;
-    cout << validaPrimeiroCarac << endl;
     return false;
   }
 
@@ -313,9 +310,76 @@ bool Emissor::validar(string codigo) const {
 }
 
 /** 
- * Método getter para código de emissor
+ * Método getter para código de emissor.
  * @return Retorna string com comprimento de 5 a 30 caracteres contendo o código do emissor.
 */
 string Emissor::getCodigo() const {
   return codigo;
+}
+
+/** 
+ * Método construtor para classe Horario.
+ * @param hora String a ser validada pelo método setHora().
+ * @throw invalid_argument Lança exceção caso parâmetro não esteja de acordo com o método setHora().
+*/
+Horario::Horario(string horario) {
+  try {
+    setHorario(horario);
+  } catch(const invalid_argument& err) {
+    throw invalid_argument(err.what());
+  }
+}
+
+/** 
+ * Método setter para horário.
+ * @param horario String a ser validada com uma hora válida entre 13:00 e 17:00. Logo, os minutos devem
+ * estar entre 0 e 59, e as horas, entre 13 e 17.
+ * @throw invalid_argument Lança exceção caso algum dos intervalos, seja o de hora ou o de minutos,
+ * seja extrapolado.
+*/
+void Horario::setHorario(string horario) {
+  try{
+    if(validar(horario)){ 
+      this->horario = horario;
+    } else {
+      throw invalid_argument("valor informado para horário em formato incorreto.");
+    }
+  } catch(const invalid_argument& err) {
+    cerr << "Argumento inválido: " << err.what() << endl;
+  }
+}
+
+bool Horario::validar(string horario) const {
+  const int tamanhoHora = horario.length();
+
+  if(tamanhoHora != 5) {
+    return false;
+  }
+
+  string horas = "00";
+  horas[0] = horario[0];
+  horas[1] = horario[1];
+  string minutos = "00";
+  minutos[0] = horario[3];
+  minutos[1] = horario[4];
+
+  int horasInt = stoi(horas);
+  int minutosInt = stoi(minutos);
+
+  bool validaHoras = (horasInt >= 13 && horasInt < 17) || (horasInt == 17 && minutosInt == 0);
+  bool validaMinutos = minutosInt >= 0 && minutosInt <=59;
+
+  if(!(validaHoras) || !(validaMinutos)) {
+    return false;
+  }
+
+  return true;
+}
+
+/** 
+ * Método getter para horário.
+ * @return Retorna string com comprimento de 5 caracteres contendo um horário.
+*/
+string Horario::getHorario() const {
+  return horario;
 }

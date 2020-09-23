@@ -61,7 +61,12 @@ public:
 
 class Horario {
 private:
+  string horario;
+  bool validar(string horario) const;
 public:
+  Horario(string horario);
+  void setHorario(string horario);
+  string getHorario() const;
 };
 
 class Numero {
