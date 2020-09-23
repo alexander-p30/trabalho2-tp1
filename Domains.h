@@ -91,5 +91,10 @@ public:
 
 class ValorDeAplicacao {
 private:
+  double valor;
+  bool validar(double valor) const;
 public:
+  ValorDeAplicacao(double valor);
+  void setValor(double valor);
+  double getValor() const;
 };

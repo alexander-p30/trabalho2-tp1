@@ -501,3 +501,50 @@ bool Senha::validar(string senha) const {
 string Senha::getSenha() const {
   return senha;
 }
+
+/** 
+ * Método construtor para classe ValorDeAplicacao.
+ * @param valor Float a ser validado pelo método setValor().
+ * @throw invalid_argument Lança exceção caso parâmetro não esteja de acordo com o método setValor().
+*/
+ValorDeAplicacao::ValorDeAplicacao(double valor) {
+  try {
+    setValor(valor);
+  } catch(const invalid_argument& err) {
+    throw invalid_argument(err.what());
+  }
+}
+
+/** 
+ * Método setter para valor.
+ * @param valor Float entre 0 e 1.000.000.
+ * @throw invalid_argument Lança exceção caso os limites não sejam atendidos. 
+*/
+void ValorDeAplicacao::setValor(double valor) {
+  try{
+    if(validar(valor)){ 
+      valor = int(valor * 100);
+      this->valor = valor/100.0;
+    } else {
+      throw invalid_argument("valor informado para valor não se encaixa nos limites (0 a 1.000.000).");
+    }
+  } catch(const invalid_argument& err) {
+    cerr << "Argumento inválido: " << err.what() << endl;
+  }
+}
+
+bool ValorDeAplicacao::validar(double valor) const {
+  if(valor < 0 || valor > 1000000) {
+    return false;
+  }
+
+  return true;
+}
+
+/** 
+ * Método getter para valor.
+ * @return Retorna double entre 0 e 1.000.000 com valor de aplicação.
+*/
+double ValorDeAplicacao::getValor() const {
+  return valor;
+}
