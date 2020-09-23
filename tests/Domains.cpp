@@ -295,3 +295,53 @@ int TUHorario::executar() {
 
   return estado;
 }
+
+// Inicialização das variáveis de classe para teste unitário de número de conta.
+const string TUNumeroDeConta::NUMERO_VALIDO[3] = {"000650-9",
+                                                  "008880-6",
+                                                  "109230-5"};
+const string TUNumeroDeConta::NUMERO_INVALIDO = "109230-1";
+
+/** 
+ * Método construtor para a classe de teste de unidade para NumeroDeConta.
+*/
+TUNumeroDeConta::TUNumeroDeConta() {
+  estado = SUCESSO;
+  conta = new NumeroDeConta();
+}
+
+void TUNumeroDeConta::cenarioValido() {
+  try {
+    const int tamanhoArr = 3;
+    int i = 0;
+    for(i = 0; i <= tamanhoArr - 1; i++) {
+      conta->setNumero(NUMERO_VALIDO[i]);
+    }
+  } catch(const invalid_argument& err) {
+    estado = FALHA;
+  }
+}
+
+void TUNumeroDeConta::cenarioInvalido() {
+  try {
+    conta->setNumero(NUMERO_INVALIDO);
+    estado = FALHA;
+  } catch(const invalid_argument& err) {
+    return;
+  }
+}
+
+/** 
+ * Método de execução de teste de unidade para domínio NumeroDeConta. São executados dois testes:
+ * - Um para valor válido para número de conta;
+ * - Um para valor inválido para número de conta.
+ * @return 1 Caso todos os testes tenham obtido sucesso.
+ * @return 2 Caso pelo menos um dos testes tenha obtido falha.
+*/
+int TUNumeroDeConta::executar() {
+  cenarioValido();
+  cenarioInvalido();
+  delete conta;
+
+  return estado;
+}
