@@ -91,10 +91,10 @@ public:
 
 class ValorDeAplicacao {
 private:
-  double valor;
-  bool validar(double valor) const;
+  float valor;
+  bool validar(float valor) const;
 public:
-  ValorDeAplicacao(double valor);
-  void setValor(double valor);
-  double getValor() const;
+  ValorDeAplicacao(float valor);
+  void setValor(float valor);
+  float getValor() const;
 };

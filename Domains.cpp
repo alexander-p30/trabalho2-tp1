@@ -507,7 +507,7 @@ string Senha::getSenha() const {
  * @param valor Float a ser validado pelo método setValor().
  * @throw invalid_argument Lança exceção caso parâmetro não esteja de acordo com o método setValor().
 */
-ValorDeAplicacao::ValorDeAplicacao(double valor) {
+ValorDeAplicacao::ValorDeAplicacao(float valor) {
   try {
     setValor(valor);
   } catch(const invalid_argument& err) {
@@ -520,7 +520,7 @@ ValorDeAplicacao::ValorDeAplicacao(double valor) {
  * @param valor Float entre 0 e 1.000.000.
  * @throw invalid_argument Lança exceção caso os limites não sejam atendidos. 
 */
-void ValorDeAplicacao::setValor(double valor) {
+void ValorDeAplicacao::setValor(float valor) {
   try{
     if(validar(valor)){ 
       valor = int(valor * 100);
@@ -533,7 +533,7 @@ void ValorDeAplicacao::setValor(double valor) {
   }
 }
 
-bool ValorDeAplicacao::validar(double valor) const {
+bool ValorDeAplicacao::validar(float valor) const {
   if(valor < 0 || valor > 1000000) {
     return false;
   }
@@ -543,8 +543,8 @@ bool ValorDeAplicacao::validar(double valor) const {
 
 /** 
  * Método getter para valor.
- * @return Retorna double entre 0 e 1.000.000 com valor de aplicação.
+ * @return Retorna float entre 0 e 1.000.000 com valor de aplicação.
 */
-double ValorDeAplicacao::getValor() const {
+float ValorDeAplicacao::getValor() const {
   return valor;
 }
