@@ -28,16 +28,12 @@ Cep::Cep(int numeroCep) {
  * 
 */
 void Cep::setNumero(int numeroCep) {
-  try{
-    if(validar(numeroCep)){ 
-      number = numeroCep;
-    } else {
-      throw invalid_argument("valor informado para CEP não condiz com nenhuma das faixas.");
-    }
-  } catch(const invalid_argument& err) {
-    cerr << "Argumento inválido: " << err.what() << endl;
-  } 
-}
+  if(validar(numeroCep)){ 
+    number = numeroCep;
+  } else {
+    throw invalid_argument("valor informado para CEP não condiz com nenhuma das faixas.");
+  }
+} 
 
 bool Cep::validar(int numeroCep) const {
   const int numDeFaixas = 6;
@@ -88,16 +84,13 @@ CodigoDeAgencia::CodigoDeAgencia(string codigo) {
  * @throw invalid_argument Lança exceção se formato do parâmetro não estiver correto.
 */
 void CodigoDeAgencia::setCodigo(string codigo) {
-  try{
-    if(validar(codigo)){ 
-      this->codigo = codigo;
-    } else {
-      throw invalid_argument("valor informado para Código de Agência não é válido.");
-    }
-  } catch(const invalid_argument& err) {
-    cerr << "Argumento inválido: " << err.what() << endl;
-  } 
-}
+  if(validar(codigo)){ 
+    this->codigo = codigo;
+  } else {
+    throw invalid_argument("valor informado para Código de Agência não é válido.");
+  }
+} 
+
 
 bool CodigoDeAgencia::validar(string codigo) const {
   if(codigo.length() != 4 || codigo == "0000") {
@@ -135,14 +128,10 @@ CodigoDeBanco::CodigoDeBanco(string codigo) {
  * @throw invalid_argument Lança exceção se formato do parâmetro não estiver correto.
 */
 void CodigoDeBanco::setCodigo(string codigo) {
-  try{
-    if(validar(codigo)){ 
-      this->codigo = codigo;
-    } else {
-      throw invalid_argument("valor informado para Código de Banco não é válido.");
-    }
-  } catch(const invalid_argument& err) {
-    cerr << "Argumento inválido: " << err.what() << endl;
+  if(validar(codigo)){ 
+    this->codigo = codigo;
+  } else {
+    throw invalid_argument("valor informado para Código de Banco não é válido.");
   }
 }
 
@@ -188,14 +177,10 @@ Cpf::Cpf(string cpfNumber) {
  * @throw invalid_argument Lança exceção caso os dígitos verificadores não estejam corretos.
 */
 void Cpf::setNumero(string cpfNumber) {
-  try{
-    if(validar(cpfNumber)){ 
-      this->cpfNumber = cpfNumber;
-    } else {
-      throw invalid_argument("valor informado para CPF não se adequa às condições mínimas.");
-    }
-  } catch(const invalid_argument& err) {
-    cerr << "Argumento inválido: " << err.what() << endl;
+  if(validar(cpfNumber)){ 
+    this->cpfNumber = cpfNumber;
+  } else {
+    throw invalid_argument("valor informado para CPF não se adequa às condições mínimas.");
   }
 }
 
@@ -267,14 +252,10 @@ Emissor::Emissor(string codigo) {
  * @throw invalid_argument Lança exceção se formato do parâmetro não estiver correto.
 */
 void Emissor::setCodigo(string codigo) {
-  try{
-    if(validar(codigo)){ 
-      this->codigo = codigo;
-    } else {
-      throw invalid_argument("valor informado para código de emissor em formato incorreto.");
-    }
-  } catch(const invalid_argument& err) {
-    cerr << "Argumento inválido: " << err.what() << endl;
+  if(validar(codigo)){ 
+    this->codigo = codigo;
+  } else {
+    throw invalid_argument("valor informado para código de emissor em formato incorreto.");
   }
 }
 
@@ -334,14 +315,10 @@ Horario::Horario(string horario) {
  * seja extrapolado.
 */
 void Horario::setHorario(string horario) {
-  try{
-    if(validar(horario)){ 
-      this->horario = horario;
-    } else {
-      throw invalid_argument("valor informado para horário em formato incorreto.");
-    }
-  } catch(const invalid_argument& err) {
-    cerr << "Argumento inválido: " << err.what() << endl;
+  if(validar(horario)){ 
+    this->horario = horario;
+  } else {
+    throw invalid_argument("valor informado para horário em formato incorreto.");
   }
 }
 
@@ -401,14 +378,10 @@ NumeroDeConta::NumeroDeConta(string numero) {
  * seja inválido. 
 */
 void NumeroDeConta::setNumero(string numero) {
-  try{
-    if(validar(numero)){ 
-      this->numero = numero;
-    } else {
-      throw invalid_argument("valor informado para número de conta em formato incorreto ou dígito verificador não confere.");
-    }
-  } catch(const invalid_argument& err) {
-    cerr << "Argumento inválido: " << err.what() << endl;
+  if(validar(numero)){ 
+    this->numero = numero;
+  } else {
+    throw invalid_argument("valor informado para número de conta em formato incorreto ou dígito verificador não confere.");
   }
 }
 
@@ -463,14 +436,10 @@ Senha::Senha(string senha) {
  * seja inválido. 
 */
 void Senha::setSenha(string senha) {
-  try{
-    if(validar(senha)){ 
-      this->senha = senha;
-    } else {
-      throw invalid_argument("valor informado para senha não condiz com requisitos mínimos.");
-    }
-  } catch(const invalid_argument& err) {
-    cerr << "Argumento inválido: " << err.what() << endl;
+  if(validar(senha)){ 
+    this->senha = senha;
+  } else {
+    throw invalid_argument("valor informado para senha não condiz com requisitos mínimos.");
   }
 }
 
@@ -521,20 +490,16 @@ ValorDeAplicacao::ValorDeAplicacao(float valor) {
  * @throw invalid_argument Lança exceção caso os limites não sejam atendidos. 
 */
 void ValorDeAplicacao::setValor(float valor) {
-  try{
-    if(validar(valor)){ 
-      valor = int(valor * 100);
-      this->valor = valor/100.0;
-    } else {
-      throw invalid_argument("valor informado para valor não se encaixa nos limites (0 a 1.000.000).");
-    }
-  } catch(const invalid_argument& err) {
-    cerr << "Argumento inválido: " << err.what() << endl;
+  if(validar(valor)){ 
+    valor = int(valor * 100);
+    this->valor = valor/100.0;
+  } else {
+    throw invalid_argument("valor informado para valor não se encaixa nos limites (0 a 1.000.000).");
   }
 }
 
 bool ValorDeAplicacao::validar(float valor) const {
-  if(valor < 0 || valor > 1000000) {
+  if(valor < 0.0 || valor > 1000000.0) {
     return false;
   }
 
