@@ -87,7 +87,19 @@ public:
 */
 class TUEmissor {
 private:
+  static const string CODIGO_VALIDO[3];
+  static const string CODIGO_INVALIDO;
+  
+  int estado;
+  Emissor *emissor;
+  
+  void cenarioValido();
+  void cenarioInvalido();
 public:
+  TUEmissor();
+  int executar();
+  static const int SUCESSO = 1;
+  static const int FALHA = 0;
 };
 
 /** 
@@ -95,7 +107,19 @@ public:
 */
 class TUHorario {
 private:
+  static const string HORARIO_VALIDO[3];
+  static const string HORARIO_INVALIDO;
+  
+  int estado;
+  Horario *horario;
+  
+  void cenarioValido();
+  void cenarioInvalido();
 public:
+  TUHorario();
+  int executar();
+  static const int SUCESSO = 1;
+  static const int FALHA = 0;
 };
 
 /** 
@@ -103,7 +127,19 @@ public:
 */
 class TUNumeroDeConta {
 private:
+  static const string NUMERO_VALIDO[3];
+  static const string NUMERO_INVALIDO;
+  
+  int estado;
+  NumeroDeConta *conta;
+  
+  void cenarioValido();
+  void cenarioInvalido();
 public:
+  TUNumeroDeConta();
+  int executar();
+  static const int SUCESSO = 1;
+  static const int FALHA = 0;
 };
 
 /** 
