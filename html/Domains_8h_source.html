@@ -119,31 +119,51 @@ $(function() {
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
 <div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classHorario.html">   62</a></span>&#160;<span class="keyword">class </span><a class="code" href="classHorario.html">Horario</a> {</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;};</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="classNumero.html">   67</a></span>&#160;<span class="keyword">class </span><a class="code" href="classNumero.html">Numero</a> {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordtype">string</span> horario;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordtype">bool</span> validar(<span class="keywordtype">string</span> horario) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <a class="code" href="classHorario.html">Horario</a>(<span class="keywordtype">string</span> horario);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordtype">void</span> setHorario(<span class="keywordtype">string</span> horario);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordtype">string</span> getHorario() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;};</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classSenha.html">   72</a></span>&#160;<span class="keyword">class </span><a class="code" href="classSenha.html">Senha</a> {</div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classNumeroDeConta.html">   72</a></span>&#160;<span class="keyword">class </span><a class="code" href="classNumeroDeConta.html">NumeroDeConta</a> {</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;};</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="classValorDeAplicacao.html">   77</a></span>&#160;<span class="keyword">class </span><a class="code" href="classValorDeAplicacao.html">ValorDeAplicacao</a> {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keywordtype">string</span> numero;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordtype">bool</span> validar(<span class="keywordtype">string</span> numero) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <a class="code" href="classNumeroDeConta.html">NumeroDeConta</a>(<span class="keywordtype">string</span> numero);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keywordtype">void</span> setNumero(<span class="keywordtype">string</span> numero);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keywordtype">string</span> getNumero() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;};</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="classSenha.html">   82</a></span>&#160;<span class="keyword">class </span><a class="code" href="classSenha.html">Senha</a> {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keywordtype">string</span> senha;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keywordtype">bool</span> validar(<span class="keywordtype">string</span> senha) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <a class="code" href="classSenha.html">Senha</a>(<span class="keywordtype">string</span> senha);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="keywordtype">void</span> setSenha(<span class="keywordtype">string</span> senha);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="keywordtype">string</span> getSenha() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;};</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="classValorDeAplicacao.html">   92</a></span>&#160;<span class="keyword">class </span><a class="code" href="classValorDeAplicacao.html">ValorDeAplicacao</a> {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keywordtype">double</span> valor;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="keywordtype">bool</span> validar(<span class="keywordtype">double</span> valor) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <a class="code" href="classValorDeAplicacao.html">ValorDeAplicacao</a>(<span class="keywordtype">double</span> valor);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="keywordtype">void</span> setValor(<span class="keywordtype">double</span> valor);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <span class="keywordtype">double</span> getValor() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassCep_html"><div class="ttname"><a href="classCep.html">Cep</a></div><div class="ttdef"><b>Definition:</b> Domains.h:6</div></div>
-<div class="ttc" id="aclassSenha_html"><div class="ttname"><a href="classSenha.html">Senha</a></div><div class="ttdef"><b>Definition:</b> Domains.h:72</div></div>
+<div class="ttc" id="aclassSenha_html"><div class="ttname"><a href="classSenha.html">Senha</a></div><div class="ttdef"><b>Definition:</b> Domains.h:82</div></div>
+<div class="ttc" id="aclassNumeroDeConta_html"><div class="ttname"><a href="classNumeroDeConta.html">NumeroDeConta</a></div><div class="ttdef"><b>Definition:</b> Domains.h:72</div></div>
 <div class="ttc" id="aclassHorario_html"><div class="ttname"><a href="classHorario.html">Horario</a></div><div class="ttdef"><b>Definition:</b> Domains.h:62</div></div>
 <div class="ttc" id="aclassEmissor_html"><div class="ttname"><a href="classEmissor.html">Emissor</a></div><div class="ttdef"><b>Definition:</b> Domains.h:52</div></div>
 <div class="ttc" id="aclassCodigoDeBanco_html"><div class="ttname"><a href="classCodigoDeBanco.html">CodigoDeBanco</a></div><div class="ttdef"><b>Definition:</b> Domains.h:32</div></div>
-<div class="ttc" id="aclassValorDeAplicacao_html"><div class="ttname"><a href="classValorDeAplicacao.html">ValorDeAplicacao</a></div><div class="ttdef"><b>Definition:</b> Domains.h:77</div></div>
-<div class="ttc" id="aclassNumero_html"><div class="ttname"><a href="classNumero.html">Numero</a></div><div class="ttdef"><b>Definition:</b> Domains.h:67</div></div>
+<div class="ttc" id="aclassValorDeAplicacao_html"><div class="ttname"><a href="classValorDeAplicacao.html">ValorDeAplicacao</a></div><div class="ttdef"><b>Definition:</b> Domains.h:92</div></div>
 <div class="ttc" id="aclassCodigoDeAgencia_html"><div class="ttname"><a href="classCodigoDeAgencia.html">CodigoDeAgencia</a></div><div class="ttdef"><b>Definition:</b> Domains.h:19</div></div>
 <div class="ttc" id="aclassCpf_html"><div class="ttname"><a href="classCpf.html">Cpf</a></div><div class="ttdef"><b>Definition:</b> Domains.h:42</div></div>
 <!-- start footer part -->
