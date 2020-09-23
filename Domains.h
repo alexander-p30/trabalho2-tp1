@@ -69,9 +69,14 @@ public:
   string getHorario() const;
 };
 
-class Numero {
+class NumeroDeConta {
 private:
+  string numero;
+  bool validar(string numero) const;
 public:
+  NumeroDeConta(string numero);
+  void setNumero(string numero);
+  string getNumero() const;
 };
 
 class Senha {

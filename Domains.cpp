@@ -203,10 +203,7 @@ bool Cpf::validar(string cpfNumber) const {
   const int numCaracteresCpf = 14;
   const int numDigitosCpf = 11;
 
-  int i = 0;
-  int j = 0;
-  int ultimoDigito = 0;
-  int penultimoDigito = 0;
+  int i = 0, j = 0, ultimoDigito = 0, penultimoDigito = 0;
   int digitosCpf[11] = {};
   
   for(i = 0; i <= numCaracteresCpf - 1; i++) {
@@ -284,8 +281,7 @@ void Emissor::setCodigo(string codigo) {
 bool Emissor::validar(string codigo) const {
   const int comprimentoCodigo = codigo.length();
   
-  int i = 0;
-  int contCaracInval = 0;
+  int i = 0, contCaracInval = 0;
 
   bool validaComprimento = !(comprimentoCodigo >= 5 && comprimentoCodigo <= 30);
   bool validaPrimeiroCarac = isalpha(codigo[0]) && islower(codigo[0]);
@@ -356,15 +352,13 @@ bool Horario::validar(string horario) const {
     return false;
   }
 
-  string horas = "00";
+  string horas = "00", minutos = "00";
   horas[0] = horario[0];
   horas[1] = horario[1];
-  string minutos = "00";
   minutos[0] = horario[3];
   minutos[1] = horario[4];
 
-  int horasInt = stoi(horas);
-  int minutosInt = stoi(minutos);
+  int horasInt = stoi(horas), minutosInt = stoi(minutos);
 
   bool validaHoras = (horasInt >= 13 && horasInt < 17) || (horasInt == 17 && minutosInt == 0);
   bool validaMinutos = minutosInt >= 0 && minutosInt <=59;
@@ -382,4 +376,69 @@ bool Horario::validar(string horario) const {
 */
 string Horario::getHorario() const {
   return horario;
+}
+
+/** 
+ * Método construtor para classe NumeroDeConta.
+ * @param hora String a ser validada pelo método setNumero().
+ * @throw invalid_argument Lança exceção caso parâmetro não esteja de acordo com o método setNumero().
+*/
+NumeroDeConta::NumeroDeConta(string numero) {
+  try {
+    setNumero(numero);
+  } catch(const invalid_argument& err) {
+    throw invalid_argument(err.what());
+  }
+}
+
+/** 
+ * Método setter para número de conta.
+ * @param numero String no formato "XXXXXX-Y" composta somente por números (0 a 9), em que Y é o 
+ * dígito verificador. O dígito verificador Y é calculado utilizando o seguinte algoritmo:
+ * Seja o número de conta ABCDEF-G, calculamos x = (A + B + C + D + E + F) % 10 e avaliamos o resultado.
+ * Se o resultado for maior que 0, G será 10 - x, caso for 0, G será 0.
+ * @throw invalid_argument Lança exceção caso o formato não seja obedecido, ou o dígito verificador
+ * seja inválido. 
+*/
+void NumeroDeConta::setNumero(string numero) {
+  try{
+    if(validar(numero)){ 
+      this->numero = numero;
+    } else {
+      throw invalid_argument("valor informado para número de conta em formato incorreto ou dígito verificador não confere.");
+    }
+  } catch(const invalid_argument& err) {
+    cerr << "Argumento inválido: " << err.what() << endl;
+  }
+}
+
+bool NumeroDeConta::validar(string numero) const {
+  const int tamanhoNumero = numero.length();
+
+  if(tamanhoNumero != 8) {
+    return false;
+  }
+
+  int i = 0, soma = 0;
+
+  for(i = 0; i <= tamanhoNumero - 3; i++) {
+    soma += numero[i] - '0';
+  }
+
+  int verificador = soma % 10 == 0 ? 0 : 10 - soma % 10;  
+
+  if(verificador != (numero[tamanhoNumero - 1] - '0')) {
+    return false;
+  }
+
+  return true;
+}
+
+/** 
+ * Método getter para número de conta.
+ * @return Retorna string com formato "XXXXXX-Y", sendo composto somente por dígitos e sendo Y
+ * o dígito verificador.
+*/
+string NumeroDeConta::getNumero() const {
+  return numero;
 }
