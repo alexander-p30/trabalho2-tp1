@@ -61,12 +61,106 @@ $(function() {
 
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#pub-methods">Membros públicos</a> &#124;
+<a href="classEmissor-members.html">Mostrar lista completa dos membros</a>  </div>
   <div class="headertitle">
 <div class="title">Referência à classe Emissor</div>  </div>
 </div><!--header-->
 <div class="contents">
-<hr/>A documentação para esta classe foi gerada a partir do seguinte ficheiro:<ul>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Membros públicos</h2></td></tr>
+<tr class="memitem:ac037c1003994166455ae0ff8901d7d3f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEmissor.html#ac037c1003994166455ae0ff8901d7d3f">Emissor</a> (string codigo)</td></tr>
+<tr class="separator:ac037c1003994166455ae0ff8901d7d3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad53076665b68ebfba3020812202648da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEmissor.html#ad53076665b68ebfba3020812202648da">setCodigo</a> (string codigo)</td></tr>
+<tr class="separator:ad53076665b68ebfba3020812202648da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af67cf0879f5215e212307a322227cc27"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEmissor.html#af67cf0879f5215e212307a322227cc27">getCodigo</a> () const</td></tr>
+<tr class="separator:af67cf0879f5215e212307a322227cc27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentação dos Construtores &amp; Destrutor</h2>
+<a id="ac037c1003994166455ae0ff8901d7d3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac037c1003994166455ae0ff8901d7d3f">&#9670;&nbsp;</a></span>Emissor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Emissor::Emissor </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>codigo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Método construtor para a classe <a class="el" href="classEmissor.html">Emissor</a>. </p><dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">codigo</td><td>String a ser validada pelo método <a class="el" href="classEmissor.html#ad53076665b68ebfba3020812202648da">setCodigo()</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Excepções</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">invalid_argument</td><td>Lança exceção caso parâmetro não esteja de acordo com o método <a class="el" href="classEmissor.html#ad53076665b68ebfba3020812202648da">setCodigo()</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Documentação dos métodos</h2>
+<a id="af67cf0879f5215e212307a322227cc27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af67cf0879f5215e212307a322227cc27">&#9670;&nbsp;</a></span>getCodigo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Emissor::getCodigo </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Método getter para código de emissor. </p><dl class="section return"><dt>Retorna</dt><dd>Retorna string com comprimento de 5 a 30 caracteres contendo o código do emissor. </dd></dl>
+
+</div>
+</div>
+<a id="ad53076665b68ebfba3020812202648da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad53076665b68ebfba3020812202648da">&#9670;&nbsp;</a></span>setCodigo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Emissor::setCodigo </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>codigo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Método setter para código de emissor. </p><dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">codigo</td><td>Representa o código de emissor. Texto de 5 a 30 caracteres, com letras, números, hífen, ponto ou espaço, em que apenas letras ou números podem estar em sequência. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Excepções</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">invalid_argument</td><td>Lança exceção se formato do parâmetro não estiver correto. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>A documentação para esta classe foi gerada a partir dos seguintes ficheiros:<ul>
 <li><a class="el" href="Domains_8h_source.html">Domains.h</a></li>
+<li>Domains.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

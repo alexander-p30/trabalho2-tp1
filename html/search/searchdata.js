@@ -2,7 +2,7 @@ var indexSectionsWithContent =
 {
   0: "ceghnpsv",
   1: "cehnsv",
-  2: "cg",
+  2: "ceghnsv",
   3: "p"
 };
 

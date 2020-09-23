@@ -61,12 +61,106 @@ $(function() {
 
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#pub-methods">Membros públicos</a> &#124;
+<a href="classSenha-members.html">Mostrar lista completa dos membros</a>  </div>
   <div class="headertitle">
 <div class="title">Referência à classe Senha</div>  </div>
 </div><!--header-->
 <div class="contents">
-<hr/>A documentação para esta classe foi gerada a partir do seguinte ficheiro:<ul>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Membros públicos</h2></td></tr>
+<tr class="memitem:a319e1d7f0e007cd40bc66fa140229bbc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSenha.html#a319e1d7f0e007cd40bc66fa140229bbc">Senha</a> (string senha)</td></tr>
+<tr class="separator:a319e1d7f0e007cd40bc66fa140229bbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d8c97b325a445bd40c375627ed81e25"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSenha.html#a8d8c97b325a445bd40c375627ed81e25">setSenha</a> (string senha)</td></tr>
+<tr class="separator:a8d8c97b325a445bd40c375627ed81e25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1cc904431d0a8287d0b22dee3e9d34ae"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSenha.html#a1cc904431d0a8287d0b22dee3e9d34ae">getSenha</a> () const</td></tr>
+<tr class="separator:a1cc904431d0a8287d0b22dee3e9d34ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentação dos Construtores &amp; Destrutor</h2>
+<a id="a319e1d7f0e007cd40bc66fa140229bbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a319e1d7f0e007cd40bc66fa140229bbc">&#9670;&nbsp;</a></span>Senha()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Senha::Senha </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>senha</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Método construtor para classe <a class="el" href="classSenha.html">Senha</a>. </p><dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">senha</td><td>String a ser validada pelo método <a class="el" href="classSenha.html#a8d8c97b325a445bd40c375627ed81e25">setSenha()</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Excepções</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">invalid_argument</td><td>Lança exceção caso parâmetro não esteja de acordo com o método <a class="el" href="classSenha.html#a8d8c97b325a445bd40c375627ed81e25">setSenha()</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Documentação dos métodos</h2>
+<a id="a1cc904431d0a8287d0b22dee3e9d34ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1cc904431d0a8287d0b22dee3e9d34ae">&#9670;&nbsp;</a></span>getSenha()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Senha::getSenha </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Método getter para senha. </p><dl class="section return"><dt>Retorna</dt><dd>Retorna string com formato "XXXXXX", sendo composto somente por dígitos (0 a 9) não repetidos. </dd></dl>
+
+</div>
+</div>
+<a id="a8d8c97b325a445bd40c375627ed81e25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d8c97b325a445bd40c375627ed81e25">&#9670;&nbsp;</a></span>setSenha()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Senha::setSenha </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>senha</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Método setter para senha. </p><dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">senha</td><td>String no formato "XXXXXX" composta somente por dígitos (0 a 9) não repetidos. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Excepções</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">invalid_argument</td><td>Lança exceção caso o formato não seja obedecido, ou o dígito verificador seja inválido. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>A documentação para esta classe foi gerada a partir dos seguintes ficheiros:<ul>
 <li><a class="el" href="Domains_8h_source.html">Domains.h</a></li>
+<li>Domains.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
