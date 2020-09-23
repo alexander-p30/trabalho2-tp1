@@ -346,14 +346,14 @@ int TUNumeroDeConta::executar() {
   return estado;
 }
 
-// Inicialização das variáveis de classe para teste unitário de número de conta.
+// Inicialização das variáveis de classe para teste unitário de senha.
 const string TUSenha::SENHA_VALIDA[3] = {"876543",
                                         "132650",
                                         "946127"};
 const string TUSenha::SENHA_INVALIDA = "516277";
 
 /** 
- * Método construtor para a classe de teste de unidade para NumeroDeConta.
+ * Método construtor para a classe de teste de unidade para Senha.
 */
 TUSenha::TUSenha() {
   estado = SUCESSO;
@@ -392,6 +392,56 @@ int TUSenha::executar() {
   cenarioValido();
   cenarioInvalido();
   delete senha;
+
+  return estado;
+}
+
+// Inicialização das variáveis de classe para teste unitário de valor de aplicação.
+const float TUValorDeAplicacao::VALOR_VALIDO[3] = {556127.1913,
+                                                  0.0,
+                                                  1000000.00};
+const float TUValorDeAplicacao::VALOR_INVALIDO = 1000001.0;
+
+/** 
+ * Método construtor para a classe de teste de unidade para ValorDeAplicacao.
+*/
+TUValorDeAplicacao::TUValorDeAplicacao() {
+  estado = SUCESSO;
+  aplicacao = new ValorDeAplicacao();
+}
+
+void TUValorDeAplicacao::cenarioValido() {
+  try {
+    const int tamanhoArr = 3;
+    int i = 0;
+    for(i = 0; i <= tamanhoArr - 1; i++) {
+      aplicacao->setValor(VALOR_VALIDO[i]);
+    }
+  } catch(const invalid_argument& err) {
+    estado = FALHA;
+  }
+}
+
+void TUValorDeAplicacao::cenarioInvalido() {
+  try {
+    aplicacao->setValor(VALOR_INVALIDO);
+    estado = FALHA;
+  } catch(const invalid_argument& err) {
+    return;
+  }
+}
+
+/** 
+ * Método de execução de teste de unidade para domínio ValorDeAplicacao. São executados dois testes:
+ * - Um para valor válido para valor de aplicação;
+ * - Um para valor inválido para valor de aplicação.
+ * @return 1 Caso todos os testes tenham obtido sucesso.
+ * @return 2 Caso pelo menos um dos testes tenha obtido falha.
+*/
+int TUValorDeAplicacao::executar() {
+  cenarioValido();
+  cenarioInvalido();
+  delete aplicacao;
 
   return estado;
 }

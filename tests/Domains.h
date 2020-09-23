@@ -166,6 +166,17 @@ public:
  * Classe de teste para domínio de valores de aplicação.
 */
 class TUValorDeAplicacao {
-private:
+  static const float VALOR_VALIDO[3];
+  static const float VALOR_INVALIDO;
+  
+  int estado;
+  ValorDeAplicacao *aplicacao;
+  
+  void cenarioValido();
+  void cenarioInvalido();
 public:
+  TUValorDeAplicacao();
+  int executar();
+  static const int SUCESSO = 1;
+  static const int FALHA = 0;
 };
