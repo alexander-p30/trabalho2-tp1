@@ -73,16 +73,18 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Membros públicos</h2></td></tr>
-<tr class="memitem:ab988299eab43e1c7f0ce52179bb2d739"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCodigoDeBanco.html#ab988299eab43e1c7f0ce52179bb2d739">CodigoDeBanco</a> (string code)</td></tr>
-<tr class="separator:ab988299eab43e1c7f0ce52179bb2d739"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4159ec66e1f14614091f47d2d4c20db8"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCodigoDeBanco.html#a4159ec66e1f14614091f47d2d4c20db8">getCode</a> () const</td></tr>
-<tr class="separator:a4159ec66e1f14614091f47d2d4c20db8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0068177ddfb340fc5338da85151ab26d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCodigoDeBanco.html#a0068177ddfb340fc5338da85151ab26d">CodigoDeBanco</a> (string codigo)</td></tr>
+<tr class="separator:a0068177ddfb340fc5338da85151ab26d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fcd2e752ea3d4aa8ea92ea5b74acb54"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCodigoDeBanco.html#a8fcd2e752ea3d4aa8ea92ea5b74acb54">setCodigo</a> (string codigo)</td></tr>
+<tr class="separator:a8fcd2e752ea3d4aa8ea92ea5b74acb54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a261a4bf648f6ae33b78710a79b30a85f"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCodigoDeBanco.html#a261a4bf648f6ae33b78710a79b30a85f">getCodigo</a> () const</td></tr>
+<tr class="separator:a261a4bf648f6ae33b78710a79b30a85f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
 <div class="textblock"><p>Classe de domínio para códigos de banco. </p>
 </div><h2 class="groupheader">Documentação dos Construtores &amp; Destrutor</h2>
-<a id="ab988299eab43e1c7f0ce52179bb2d739"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab988299eab43e1c7f0ce52179bb2d739">&#9670;&nbsp;</a></span>CodigoDeBanco()</h2>
+<a id="a0068177ddfb340fc5338da85151ab26d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0068177ddfb340fc5338da85151ab26d">&#9670;&nbsp;</a></span>CodigoDeBanco()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -91,14 +93,63 @@ Membros públicos</h2></td></tr>
           <td class="memname">CodigoDeBanco::CodigoDeBanco </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>code</em></td><td>)</td>
+          <td class="paramname"><em>codigo</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método construtor da classe <a class="el" href="classCodigoDeBanco.html">CodigoDeBanco</a>. </p><dl class="params"><dt>Parâmetros</dt><dd>
+<p>Método construtor para classe <a class="el" href="classCodigoDeBanco.html">CodigoDeBanco</a>. </p><dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
-    <tr><td class="paramname">code</td><td>Representa o código de banco. Deve estar no formato XXX, numérico, e deve ser igual a um dos seguintes valores {001, 033, 104, 237, 341}. </td></tr>
+    <tr><td class="paramname">codigo</td><td>String a ser validada pelo método <a class="el" href="classCodigoDeBanco.html#a8fcd2e752ea3d4aa8ea92ea5b74acb54">setCodigo()</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Excepções</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">invalid_argument</td><td>Lança exceção caso parâmetro não esteja de acordo com o método <a class="el" href="classCodigoDeBanco.html#a8fcd2e752ea3d4aa8ea92ea5b74acb54">setCodigo()</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Documentação dos métodos</h2>
+<a id="a261a4bf648f6ae33b78710a79b30a85f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a261a4bf648f6ae33b78710a79b30a85f">&#9670;&nbsp;</a></span>getCodigo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string CodigoDeBanco::getCodigo </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Método que retorna string do código de banco. </p><dl class="section return"><dt>Retorna</dt><dd>String do código de banco </dd></dl>
+
+</div>
+</div>
+<a id="a8fcd2e752ea3d4aa8ea92ea5b74acb54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fcd2e752ea3d4aa8ea92ea5b74acb54">&#9670;&nbsp;</a></span>setCodigo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CodigoDeBanco::setCodigo </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>codigo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Método setter para valor de código de banco. </p><dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">codigo</td><td>Representa o código de banco. Deve estar no formato XXX, numérico, e deve ser igual a um dos seguintes valores {001, 033, 104, 237, 341}. </td></tr>
   </table>
   </dd>
 </dl>
@@ -108,25 +159,6 @@ Membros públicos</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<h2 class="groupheader">Documentação dos métodos</h2>
-<a id="a4159ec66e1f14614091f47d2d4c20db8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4159ec66e1f14614091f47d2d4c20db8">&#9670;&nbsp;</a></span>getCode()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string CodigoDeBanco::getCode </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Método que retorna string do código de banco. </p><dl class="section return"><dt>Retorna</dt><dd>String do código de banco </dd></dl>
 
 </div>
 </div>

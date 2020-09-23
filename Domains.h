@@ -6,10 +6,11 @@ using namespace std;
 class Cep {
 private:
   int number;
-  bool validar(int cepNumber) const;
+  bool validar(int numeroCep) const;
 public:
-  Cep(int cepNumber);
-  int getNumber() const;
+  Cep(int numeroCep);
+  void setNumero(int numeroCep);
+  int getNumero() const;
 };
 
 /** 
@@ -17,11 +18,12 @@ public:
 */
 class CodigoDeAgencia {
 private:
-  string code;
-  bool validar(string code) const;
+  string codigo;
+  bool validar(string codigo) const;
 public:
-  CodigoDeAgencia(string code);
-  string getCode() const;
+  CodigoDeAgencia(string codigo);
+  void setCodigo(string codigo);
+  string getCodigo() const;
 };
 
 /** 
@@ -29,33 +31,88 @@ public:
 */
 class CodigoDeBanco {
 private:
-  string code;
-  bool validar(string code) const;
+  string codigo;
+  bool validar(string codigo) const;
 public:
-  CodigoDeBanco(string code);
-  string getCode() const;
+  CodigoDeBanco(string codigo);
+  void setCodigo(string codigo);
+  string getCodigo() const;
 };
 
-class CPF {
-
+/** 
+ * Classe de domínio para números de CPF.
+*/
+class Cpf {
+private:
+  string cpfNumber;
+  bool validar(string cpfNumber) const;
+public:
+  Cpf(string cpfNumber);
+  void setNumero(string cpfNumber);
+  string getNumero() const;
 };
 
+/** 
+ * Classe de domínio para códigos de Emissor.
+*/
 class Emissor {
-
+private:
+  string codigo;
+  bool validar(string codigo) const;
+public:
+  Emissor(string codigo);
+  void setCodigo(string codigo);
+  string getCodigo() const;
 };
 
+/** 
+ * Classe de domínio para Horários.
+*/
 class Horario {
-
+private:
+  string horario;
+  bool validar(string horario) const;
+public:
+  Horario(string horario);
+  void setHorario(string horario);
+  string getHorario() const;
 };
 
-class Numero {
-
+/** 
+ * Classe de domínio para números de conta.
+*/
+class NumeroDeConta {
+private:
+  string numero;
+  bool validar(string numero) const;
+public:
+  NumeroDeConta(string numero);
+  void setNumero(string numero);
+  string getNumero() const;
 };
 
+/** 
+ * Classe de domínio para senhas.
+*/
 class Senha {
-
+private:
+  string senha;
+  bool validar(string senha) const;
+public:
+  Senha(string senha);
+  void setSenha(string senha);
+  string getSenha() const;
 };
 
+/** 
+ * Classe de domínio para valores de aplicação.
+*/
 class ValorDeAplicacao {
-
+private:
+  float valor;
+  bool validar(float valor) const;
+public:
+  ValorDeAplicacao(float valor);
+  void setValor(float valor);
+  float getValor() const;
 };

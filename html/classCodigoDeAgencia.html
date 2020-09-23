@@ -73,16 +73,18 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Membros públicos</h2></td></tr>
-<tr class="memitem:a60dc7c497629bc3c7f5d5034639962fe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCodigoDeAgencia.html#a60dc7c497629bc3c7f5d5034639962fe">CodigoDeAgencia</a> (string code)</td></tr>
-<tr class="separator:a60dc7c497629bc3c7f5d5034639962fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ade5193349218535de692f89e7fa863"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCodigoDeAgencia.html#a7ade5193349218535de692f89e7fa863">getCode</a> () const</td></tr>
-<tr class="separator:a7ade5193349218535de692f89e7fa863"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a634a06ef57f45618ee24e3bf6fa1c050"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCodigoDeAgencia.html#a634a06ef57f45618ee24e3bf6fa1c050">CodigoDeAgencia</a> (string codigo)</td></tr>
+<tr class="separator:a634a06ef57f45618ee24e3bf6fa1c050"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc845eb57cd01ee95b61615c7f89e1de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCodigoDeAgencia.html#abc845eb57cd01ee95b61615c7f89e1de">setCodigo</a> (string codigo)</td></tr>
+<tr class="separator:abc845eb57cd01ee95b61615c7f89e1de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0466291415be2c186d9e23b0a6e5a55"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCodigoDeAgencia.html#ab0466291415be2c186d9e23b0a6e5a55">getCodigo</a> () const</td></tr>
+<tr class="separator:ab0466291415be2c186d9e23b0a6e5a55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
 <div class="textblock"><p>Classe de domínio para códigos de agência. </p>
 </div><h2 class="groupheader">Documentação dos Construtores &amp; Destrutor</h2>
-<a id="a60dc7c497629bc3c7f5d5034639962fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a60dc7c497629bc3c7f5d5034639962fe">&#9670;&nbsp;</a></span>CodigoDeAgencia()</h2>
+<a id="a634a06ef57f45618ee24e3bf6fa1c050"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a634a06ef57f45618ee24e3bf6fa1c050">&#9670;&nbsp;</a></span>CodigoDeAgencia()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -91,14 +93,63 @@ Membros públicos</h2></td></tr>
           <td class="memname">CodigoDeAgencia::CodigoDeAgencia </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>code</em></td><td>)</td>
+          <td class="paramname"><em>codigo</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método construtor da classe <a class="el" href="classCodigoDeAgencia.html">CodigoDeAgencia</a>. </p><dl class="params"><dt>Parâmetros</dt><dd>
+<p>Método construtor para classe <a class="el" href="classCodigoDeAgencia.html">CodigoDeAgencia</a>. </p><dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
-    <tr><td class="paramname">code</td><td>Representa o código de agência. Deve estar no formato XXXX, numérico, diferente de 0000. </td></tr>
+    <tr><td class="paramname">codigo</td><td>String a ser validada pelo método <a class="el" href="classCodigoDeAgencia.html#abc845eb57cd01ee95b61615c7f89e1de">setCodigo()</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Excepções</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">invalid_argument</td><td>Lança exceção caso parâmetro não esteja de acordo com o método <a class="el" href="classCodigoDeAgencia.html#abc845eb57cd01ee95b61615c7f89e1de">setCodigo()</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Documentação dos métodos</h2>
+<a id="ab0466291415be2c186d9e23b0a6e5a55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0466291415be2c186d9e23b0a6e5a55">&#9670;&nbsp;</a></span>getCodigo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string CodigoDeAgencia::getCodigo </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Método que retorna string do código de agência. </p><dl class="section return"><dt>Retorna</dt><dd>String do código de agência </dd></dl>
+
+</div>
+</div>
+<a id="abc845eb57cd01ee95b61615c7f89e1de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc845eb57cd01ee95b61615c7f89e1de">&#9670;&nbsp;</a></span>setCodigo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CodigoDeAgencia::setCodigo </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>codigo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Método setter para código de agência. </p><dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">codigo</td><td>Representa o código de agência. Deve estar no formato XXXX, numérico, diferente de 0000. </td></tr>
   </table>
   </dd>
 </dl>
@@ -108,25 +159,6 @@ Membros públicos</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<h2 class="groupheader">Documentação dos métodos</h2>
-<a id="a7ade5193349218535de692f89e7fa863"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7ade5193349218535de692f89e7fa863">&#9670;&nbsp;</a></span>getCode()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string CodigoDeAgencia::getCode </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Método que retorna string do código de agência. </p><dl class="section return"><dt>Retorna</dt><dd>String do código de agência </dd></dl>
 
 </div>
 </div>

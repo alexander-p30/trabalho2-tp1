@@ -61,12 +61,106 @@ $(function() {
 
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#pub-methods">Membros públicos</a> &#124;
+<a href="classHorario-members.html">Mostrar lista completa dos membros</a>  </div>
   <div class="headertitle">
 <div class="title">Referência à classe Horario</div>  </div>
 </div><!--header-->
 <div class="contents">
-<hr/>A documentação para esta classe foi gerada a partir do seguinte ficheiro:<ul>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Membros públicos</h2></td></tr>
+<tr class="memitem:a42b3a6fbc50141655409334b64a6f933"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHorario.html#a42b3a6fbc50141655409334b64a6f933">Horario</a> (string horario)</td></tr>
+<tr class="separator:a42b3a6fbc50141655409334b64a6f933"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbf8d4352a311a9632e2aa0dfe017d93"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHorario.html#abbf8d4352a311a9632e2aa0dfe017d93">setHorario</a> (string horario)</td></tr>
+<tr class="separator:abbf8d4352a311a9632e2aa0dfe017d93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a543ceb0cbd8444bfe0d6f670df97d676"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHorario.html#a543ceb0cbd8444bfe0d6f670df97d676">getHorario</a> () const</td></tr>
+<tr class="separator:a543ceb0cbd8444bfe0d6f670df97d676"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentação dos Construtores &amp; Destrutor</h2>
+<a id="a42b3a6fbc50141655409334b64a6f933"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42b3a6fbc50141655409334b64a6f933">&#9670;&nbsp;</a></span>Horario()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Horario::Horario </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>horario</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Método construtor para classe <a class="el" href="classHorario.html">Horario</a>. </p><dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hora</td><td>String a ser validada pelo método setHora(). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Excepções</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">invalid_argument</td><td>Lança exceção caso parâmetro não esteja de acordo com o método setHora(). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Documentação dos métodos</h2>
+<a id="a543ceb0cbd8444bfe0d6f670df97d676"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a543ceb0cbd8444bfe0d6f670df97d676">&#9670;&nbsp;</a></span>getHorario()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Horario::getHorario </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Método getter para horário. </p><dl class="section return"><dt>Retorna</dt><dd>Retorna string com comprimento de 5 caracteres contendo um horário. </dd></dl>
+
+</div>
+</div>
+<a id="abbf8d4352a311a9632e2aa0dfe017d93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbf8d4352a311a9632e2aa0dfe017d93">&#9670;&nbsp;</a></span>setHorario()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Horario::setHorario </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>horario</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Método setter para horário. </p><dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">horario</td><td>String a ser validada com uma hora válida entre 13:00 e 17:00. Logo, os minutos devem estar entre 0 e 59, e as horas, entre 13 e 17. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Excepções</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">invalid_argument</td><td>Lança exceção caso algum dos intervalos, seja o de hora ou o de minutos, seja extrapolado. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>A documentação para esta classe foi gerada a partir dos seguintes ficheiros:<ul>
 <li><a class="el" href="Domains_8h_source.html">Domains.h</a></li>
+<li>Domains.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
