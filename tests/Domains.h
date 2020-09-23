@@ -27,7 +27,19 @@ public:
 */
 class TUCodigoDeAgencia {
 private:
+  static const string CODIGO_VALIDO;
+  static const string CODIGO_INVALIDO;
+  
+  int estado;
+  CodigoDeAgencia *agencia;
+  
+  void cenarioValido();
+  void cenarioInvalido();
 public:
+  TUCodigoDeAgencia();
+  int executar();
+  static const int SUCESSO = 1;
+  static const int FALHA = 0;
 };
 
 /** 
@@ -35,7 +47,19 @@ public:
 */
 class TUCodigoDeBanco {
 private:
+  static const string CODIGO_VALIDO;
+  static const string CODIGO_INVALIDO;
+  
+  int estado;
+  CodigoDeBanco *banco;
+  
+  void cenarioValido();
+  void cenarioInvalido();
 public:
+  TUCodigoDeBanco();
+  int executar();
+  static const int SUCESSO = 1;
+  static const int FALHA = 0;
 };
 
 /** 
