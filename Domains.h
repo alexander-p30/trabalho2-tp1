@@ -39,6 +39,9 @@ public:
   string getCodigo() const;
 };
 
+/** 
+ * Classe de domínio para números de CPF.
+*/
 class Cpf {
 private:
   string cpfNumber;
@@ -49,6 +52,9 @@ public:
   string getNumero() const;
 };
 
+/** 
+ * Classe de domínio para códigos de Emissor.
+*/
 class Emissor {
 private:
   string codigo;
@@ -59,6 +65,9 @@ public:
   string getCodigo() const;
 };
 
+/** 
+ * Classe de domínio para Horários.
+*/
 class Horario {
 private:
   string horario;
@@ -69,6 +78,9 @@ public:
   string getHorario() const;
 };
 
+/** 
+ * Classe de domínio para números de conta.
+*/
 class NumeroDeConta {
 private:
   string numero;
@@ -79,6 +91,9 @@ public:
   string getNumero() const;
 };
 
+/** 
+ * Classe de domínio para senhas.
+*/
 class Senha {
 private:
   string senha;
@@ -89,6 +104,9 @@ public:
   string getSenha() const;
 };
 
+/** 
+ * Classe de domínio para valores de aplicação.
+*/
 class ValorDeAplicacao {
 private:
   float valor;
