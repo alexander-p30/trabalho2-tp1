@@ -499,7 +499,7 @@ void ValorDeAplicacao::setValor(float valor) {
 }
 
 bool ValorDeAplicacao::validar(float valor) const {
-  if(valor < 0 || valor > 1000000) {
+  if(valor < 0.0 || valor > 1000000.0) {
     return false;
   }
 
