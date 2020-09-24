@@ -1,4 +1,4 @@
-#include "Domains.h"
+#include "../headers/Domains.h"
 #include <iostream>
 #include <ctype.h>
 using namespace std;
@@ -712,14 +712,14 @@ void Data::setData(string data)
 
 bool Data::validar(string data) const
 {
-  bool bissexto = false;
   string d = "";
   string m = "";
   string a = "";
   int first = data.find("/");
   int last = data.find_last_of("/");
   int i = 0;
-  for (i = 0; i < data.length(); i++)
+  const int tamanhoData = data.length();
+  for (i = 0; i < tamanhoData; i++)
   {
     if (i < first)
     {
@@ -809,6 +809,8 @@ bool Data::validar(string data) const
       }
     }
   }
+
+  return false;
 };
 
 /**
@@ -853,11 +855,12 @@ void Endereco::setEndereco(string endereco)
 bool Endereco::validar(string endereco) const
 {
   int i = 0;
+  const int tamanhoEndereco = endereco.length();
   if (isupper(endereco[0]) != 0 || isspace(endereco[i]) != 0 || endereco[i] == '.')
   {
-    if (endereco.length() >= 5 && endereco.length() <= 20)
+    if (tamanhoEndereco >= 5 && tamanhoEndereco <= 20)
     {
-      for (i = 1; i < endereco.length(); i++)
+      for (i = 1; i < tamanhoEndereco; i++)
       {
         if (isalpha(endereco[i]) != 0 || isspace(endereco[i]) != 0 || endereco[i] == '.')
         {
@@ -931,11 +934,12 @@ void Nome::setNome(string nome)
 bool Nome::validar(string nome) const
 {
   int i = 0;
+  const int tamanhoNome = nome.length();
   if (isupper(nome[0]) != 0)
   {
-    if (nome.length() >= 5 && nome.length() <= 30)
+    if (tamanhoNome >= 5 && tamanhoNome <= 30)
     {
-      for (i = 1; i < nome.length(); i++)
+      for (i = 1; i < tamanhoNome; i++)
       {
         if (isalpha(nome[i]) != 0 || isspace(nome[i]) != 0)
         {
