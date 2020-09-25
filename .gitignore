@@ -2,8 +2,5 @@
 *.o
 *.out
 
-# Ignores main file, since it is just used for testing purposes
-main.cpp
-
 # Temporary files
 *.swp

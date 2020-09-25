@@ -32,13 +32,11 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="Dominios.h">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
-		<Unit filename="main.cpp" />
-		<Extensions>
-			<code_completion />
-			<debugger />
-		</Extensions>
+		<Unit filename="headers/Domains.h" />
+		<Unit filename="source/Domains.cpp" />
+		<Unit filename="source/main.cpp" />
+		<Unit filename="tests/DomainTests.cpp" />
+		<Unit filename="tests/DomainTests.h" />
+		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

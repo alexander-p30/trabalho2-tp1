@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1600984448 source:/home/alexander/Documents/unb/tp1/code/trabalho1/source/Domains.cpp
+	"../headers/Domains.h"
+	<iostream>
+	<ctype.h>
+
+1600984424 /home/alexander/Documents/unb/tp1/code/trabalho1/headers/Domains.h
+	<string>
+
+1600984347 source:/home/alexander/Documents/unb/tp1/code/trabalho1/tests/DomainTests.cpp
+	<iostream>
+	"DomainTests.h"
+
+1600984468 /home/alexander/Documents/unb/tp1/code/trabalho1/tests/DomainTests.h
+	"../headers/Domains.h"
+	<string>
+
