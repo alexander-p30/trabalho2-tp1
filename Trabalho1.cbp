@@ -34,6 +34,7 @@
 		</Compiler>
 		<Unit filename="headers/Domains.h" />
 		<Unit filename="source/Domains.cpp" />
+		<Unit filename="source/main.cpp" />
 		<Unit filename="tests/DomainTests.cpp" />
 		<Unit filename="tests/DomainTests.h" />
 		<Extensions />
