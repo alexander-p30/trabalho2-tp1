@@ -1,7 +1,6 @@
 #include <string>
 using namespace std;
 
-
 /**
  * Classe de domínio para números de Cep.
 */
