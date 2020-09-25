@@ -366,3 +366,32 @@ public:
   static const int SUCESSO = 1;
   static const int FALHA = 0;
 };
+
+class TestesDeDominio {
+private:
+  TUCep *tuCep;
+  TUCodigoDeAgencia *tuCodigoDeAgencia;
+  TUCodigoDeBanco *tuCodigoDeBanco;
+  TUCpf *tuCpf;
+  TUEmissor *tuEmissor;
+  TUHorario *tuHorario;
+  TUNumeroDeConta *tuNumeroDeConta;
+  TUSenha *tuSenha;
+  TUValorDeAplicacao *tuValorDeAplicacao;
+  TUClasse *tuClasse;
+  TUCodigoDeAplicacao *tuCodigoDeAplicacao;
+  TUCodigoDeProduto *tuCodigoDeProduto;
+  TUData *tuData;
+  TUEndereco *tuEndereco;
+  TUNome *tuNome;
+  TUPrazo *tuPrazo;
+  TUTaxa *tuTaxa;
+  TUValorMinimo *tuValorMinimo;
+
+  int estado;
+public:
+  TestesDeDominio();
+  int executar();
+  static const int SUCESSO = 1;
+  static const int FALHA = 0;
+};
