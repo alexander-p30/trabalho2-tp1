@@ -13,11 +13,11 @@ private:
 public:
   // Constructors
   Usuario(
-    Nome nome,
-    Endereco endereco,
-    Cep cep,
-    Cpf cpf,
-    Senha senha
+    string nome,
+    string endereco,
+    int cep,
+    string cpf,
+    string senha
   );
   Usuario() {};
 
@@ -26,8 +26,8 @@ public:
   void setNome(string nome);
   string getEndereco() const;
   void setEndereco(string endereco);
-  string getCep() const;
-  void setCep(string Cep);
+  int getCep() const;
+  void setCep(int cep);
   string getCpf() const;
   void setCpf(string cpf);
   string getSenha() const;
