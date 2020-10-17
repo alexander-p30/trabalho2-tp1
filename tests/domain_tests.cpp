@@ -62,7 +62,7 @@ int TUCep::executar() {
 
 // Inicialização das variáveis de classe para teste unitário de código de agência.
 const string TUCodigoDeAgencia::CODIGO_VALIDO[3] = {"1234", "8413", "9999"};
-const string TUCodigoDeAgencia::CODIGO_INVALIDO = "0000";
+const string TUCodigoDeAgencia::CODIGO_INVALIDO = "123A";
 
 /**
  * Método construtor para a classe de teste de unidade para CódigoDeAgencia.

@@ -94,8 +94,16 @@ void CodigoDeAgencia::setCodigo(string codigo) {
 
 
 bool CodigoDeAgencia::validar(string codigo) const {
-  if(codigo.length() != 4 || codigo == "0000") {
+  const int tamanhoCodigo = 4;
+  int i = 0;
+  if(codigo.length() != tamanhoCodigo || codigo == "0000") {
     return false;
+  }
+
+  for(i = 0; i < tamanhoCodigo; i++) {
+    if(!isdigit(codigo[i])) {
+      return false;
+    }
   }
 
   return true;
