@@ -406,9 +406,9 @@ int TUNumeroDeConta::executar() {
 
 // Inicialização das variáveis de classe para teste unitário de senha.
 const string TUSenha::SENHA_VALIDA[3] = {"876543",
-                                        "132650",
+                                        "134650",
                                         "946127"};
-const string TUSenha::SENHA_INVALIDA = "516277";
+const string TUSenha::SENHA_INVALIDA = "5A6217";
 
 /**
  * Método construtor para a classe de teste de unidade para Senha.

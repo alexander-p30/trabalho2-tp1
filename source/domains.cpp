@@ -455,7 +455,7 @@ bool Senha::validar(string senha) const {
 
   for(i = 0; i <= tamanhoSenha - 2; i++) {
     for(j = i + 1; j <= tamanhoSenha - 1; j++) {
-      if(senha[i] == senha[j]) {
+      if(senha[i] == senha[j] || !isdigit(senha[i])) {
         return false;
       }
     }
