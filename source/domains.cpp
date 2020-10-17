@@ -404,6 +404,9 @@ bool NumeroDeConta::validar(string numero) const {
   int i = 0, soma = 0;
 
   for(i = 0; i <= tamanhoNumero - 3; i++) {
+    if(!isdigit(numero[i])) {
+      return false;
+    }
     soma += numero[i] - '0';
   }
 
