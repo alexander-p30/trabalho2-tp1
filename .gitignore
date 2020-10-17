@@ -1,6 +1,7 @@
 # Ignores every compiled file
 *.o
 *.out
+*.gch
 
 # Temporary files
 *.swp
