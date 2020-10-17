@@ -123,3 +123,82 @@ void Usuario::setSenha(string senha) {
     throw invalid_argument(err.what());
   }
 }
+
+/**
+ * Método construtor de entidade Conta.
+ * @param banco String com código de banco da conta, a ser verificada pelo metodo CodigoDeBanco::setCodigo().
+ * @param agencia String com código de agência da conta, a ser verificada pelo metodo CodigoDeAgencia::setCodigo().
+ * @param numero String com número da conta, a ser verificada pelo metodo NumeroDeConta::setNumero().
+ * @throw invalid_argument Se o método de validação de algum dos parâmetros falhar, lança exceção.
+ *
+*/
+Conta::Conta(
+    string banco, 
+    string agencia, 
+    string numero
+  ) {
+    try {
+    setBanco(banco);
+    setAgencia(agencia);
+    setNumero(numero);
+  } catch(const invalid_argument& err) {
+    throw invalid_argument(err.what());
+  }
+}
+
+/** 
+ * Método getter para código de banco da conta.
+ * @return String contendo o código de banco da conta.
+*/
+string Conta::getBanco() const {
+  return this->banco.getCodigo();
+}
+
+/** Método setter o código de banco da conta.
+ * @param banco String contendo código de banco da conta, a ser validada pelo método CodigoDeBanco::setCodigo().
+*/
+void Conta::setBanco(string banco) {
+  try {
+    this->banco.setCodigo(banco);
+  } catch(const invalid_argument& err) {
+    throw invalid_argument(err.what());
+  }
+}
+
+/** 
+ * Método getter para código de agência da conta.
+ * @return String contendo o código de agência da conta.
+*/
+string Conta::getAgencia() const {
+  return this->agencia.getCodigo();
+}
+
+/** Método setter o código de agência da conta.
+ * @param banco String contendo código de agência da conta, a ser validada pelo método CodigoDeAgencia::setCodigo().
+*/
+void Conta::setAgencia(string agencia) {
+  try {
+    this->agencia.setCodigo(agencia);
+  } catch(const invalid_argument& err) {
+    throw invalid_argument(err.what());
+  } 
+}
+
+/** 
+ * Método getter para o número da conta.
+ * @return String contendo o número da conta.
+*/
+string Conta::getNumero() const {
+  return this->numero.getNumero();
+}
+
+/** Método setter o número da conta.
+ * @param banco String contendo número da conta, a ser validada pelo método NumeroDeConta::setNumero().
+*/
+void Conta::setNumero(string numero) {
+  try {
+    this->numero.setNumero(numero);
+  } catch(const invalid_argument& err) {
+    throw invalid_argument(err.what());
+  } 
+}

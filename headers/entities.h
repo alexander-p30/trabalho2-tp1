@@ -45,9 +45,9 @@ private:
 public:
   // Constructors
   Conta(
-    CodigoDeBanco banco, 
-    CodigoDeAgencia agencia, 
-    NumeroDeConta numero
+    string banco, 
+    string agencia, 
+    string numero
   );
   Conta() {};
 
@@ -56,6 +56,6 @@ public:
   void setBanco(string banco);
   string getAgencia() const;
   void setAgencia(string agencia);
-  string getConta() const;
-  void setConta(string conta);
+  string getNumero() const;
+  void setNumero(string numero);
 };
