@@ -22,16 +22,16 @@ public:
   Usuario() {};
 
   // Getters and setters
-  string getNome(string nome) const;
-  void setNome();
-  string getEndereco(string endereco) const;
-  void setEndereco();
-  string getCep(string Cep) const;
-  void setCep();
-  string getCpf(string cpf) const;
-  void setCpf();
-  string getSenha(string senha) const;
-  void setSenha();
+  string getNome() const;
+  void setNome(string nome);
+  string getEndereco() const;
+  void setEndereco(string endereco);
+  string getCep() const;
+  void setCep(string Cep);
+  string getCpf() const;
+  void setCpf(string cpf);
+  string getSenha() const;
+  void setSenha(string senha);
 };
 
 /**
@@ -52,10 +52,10 @@ public:
   Conta() {};
 
   // Getters and setters
-  string getBanco(string banco) const;
-  void setBanco();
-  string getAgencia(string agencia) const;
-  void setAgencia();
-  string getConta(string conta) const;
-  void setConta();
+  string getBanco() const;
+  void setBanco(string banco);
+  string getAgencia() const;
+  void setAgencia(string agencia);
+  string getConta() const;
+  void setConta(string conta);
 };
