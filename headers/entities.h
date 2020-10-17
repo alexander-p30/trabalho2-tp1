@@ -11,7 +11,7 @@ private:
   Cpf cpf;
   Senha senha;
 public:
-  // Constructors
+  // Construtores
   Usuario(
     string nome,
     string endereco,
@@ -21,7 +21,7 @@ public:
   );
   Usuario() {};
 
-  // Getters and setters
+  // Getters e setters
   string getNome() const;
   void setNome(string nome);
   string getEndereco() const;

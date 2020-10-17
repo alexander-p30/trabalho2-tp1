@@ -1,0 +1,15 @@
+/home/alexander/Documents/unb/tp1/code/trabalho2/source/domains.cpp:162: warning: argument 'Number' of command @param is not found in the argument list of Cpf::Cpf(string cpfNumber)
+/home/alexander/Documents/unb/tp1/code/trabalho2/headers/domains.h:54: warning: The following parameter of Cpf::Cpf(string cpfNumber) is not documented:
+  parameter 'cpfNumber'
+/home/alexander/Documents/unb/tp1/code/trabalho2/source/domains.cpp:298: warning: argument 'hora' of command @param is not found in the argument list of Horario::Horario(string horario)
+/home/alexander/Documents/unb/tp1/code/trabalho2/headers/domains.h:82: warning: The following parameter of Horario::Horario(string horario) is not documented:
+  parameter 'horario'
+/home/alexander/Documents/unb/tp1/code/trabalho2/source/domains.cpp:359: warning: argument 'hora' of command @param is not found in the argument list of NumeroDeConta::NumeroDeConta(string numero)
+/home/alexander/Documents/unb/tp1/code/trabalho2/headers/domains.h:96: warning: The following parameter of NumeroDeConta::NumeroDeConta(string numero) is not documented:
+  parameter 'numero'
+/home/alexander/Documents/unb/tp1/code/trabalho2/source/entities.cpp:78: warning: argument 'endereco' of command @param is not found in the argument list of Usuario::setCep(int cep)
+/home/alexander/Documents/unb/tp1/code/trabalho2/headers/entities.h:30: warning: The following parameter of Usuario::setCep(int cep) is not documented:
+  parameter 'cep'
+/home/alexander/Documents/unb/tp1/code/trabalho2/source/entities.cpp:97: warning: argument 'endereco' of command @param is not found in the argument list of Usuario::setCpf(string cpf)
+/home/alexander/Documents/unb/tp1/code/trabalho2/headers/entities.h:32: warning: The following parameter of Usuario::setCpf(string cpf) is not documented:
+  parameter 'cpf'
