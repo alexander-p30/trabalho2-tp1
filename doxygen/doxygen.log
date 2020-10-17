@@ -1,3 +1,9 @@
+/home/alexander/Documents/unb/tp1/code/trabalho2/source/entities.cpp:176: warning: argument 'banco' of command @param is not found in the argument list of Conta::setAgencia(string agencia)
+/home/alexander/Documents/unb/tp1/code/trabalho2/headers/entities.h:58: warning: The following parameter of Conta::setAgencia(string agencia) is not documented:
+  parameter 'agencia'
+/home/alexander/Documents/unb/tp1/code/trabalho2/source/entities.cpp:195: warning: argument 'banco' of command @param is not found in the argument list of Conta::setNumero(string numero)
+/home/alexander/Documents/unb/tp1/code/trabalho2/headers/entities.h:60: warning: The following parameter of Conta::setNumero(string numero) is not documented:
+  parameter 'numero'
 /home/alexander/Documents/unb/tp1/code/trabalho2/source/domains.cpp:162: warning: argument 'Number' of command @param is not found in the argument list of Cpf::Cpf(string cpfNumber)
 /home/alexander/Documents/unb/tp1/code/trabalho2/headers/domains.h:54: warning: The following parameter of Cpf::Cpf(string cpfNumber) is not documented:
   parameter 'cpfNumber'
