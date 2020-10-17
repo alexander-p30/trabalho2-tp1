@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "DomainTests.h"
+#include "domain_tests.h"
 using namespace std;
 
 // Inicialização das variáveis de classe para teste unitário de CEP.

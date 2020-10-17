@@ -1,4 +1,4 @@
-#include "../headers/Domains.h"
+#include "../headers/domains.h"
 #include <string>
 using namespace std;
 

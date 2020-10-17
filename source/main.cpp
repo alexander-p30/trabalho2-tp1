@@ -1,4 +1,4 @@
-#include "../tests/DomainTests.h"
+#include "../tests/domain_tests.h"
 #include <iostream>
 
 int main() {
