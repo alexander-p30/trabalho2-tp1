@@ -1,3 +1,6 @@
+#ifndef ENTITIES_H
+#define ENTITIES_H
+
 #include "domains.h"
 
 /** 
@@ -59,3 +62,5 @@ public:
   string getNumero() const;
   void setNumero(string numero);
 };
+
+#endif

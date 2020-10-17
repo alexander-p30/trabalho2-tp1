@@ -1,3 +1,6 @@
+#ifndef DOMAINS_H
+#define DOMAINS_H
+
 #include <string>
 using namespace std;
 
@@ -265,3 +268,5 @@ public:
   float getValorMinimo() const;
   void setValorMinimo(float valor);
 };
+
+#endif
