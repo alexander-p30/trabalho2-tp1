@@ -5,3 +5,6 @@
 
 # Temporary files
 *.swp
+
+# VSCode stuff
+.vscode/
