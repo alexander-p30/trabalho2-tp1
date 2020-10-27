@@ -39,6 +39,12 @@
 		<Unit filename="source/main.cpp" />
 		<Unit filename="tests/domain_tests.cpp" />
 		<Unit filename="tests/domain_tests.h" />
-		<Extensions />
+		<Unit filename="tests/entity_tests.cpp" />
+		<Unit filename="tests/entity_tests.h" />
+		<Extensions>
+			<envvars />
+			<code_completion />
+			<debugger />
+		</Extensions>
 	</Project>
 </CodeBlocks_project_file>
