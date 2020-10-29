@@ -498,7 +498,7 @@ void Aplicacao::setValor(float valor){
 */
 
 string Aplicacao::getData() const{
-    this->data.getData();
+  return this->data.getData();
 }
 
 /**
