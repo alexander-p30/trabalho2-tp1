@@ -247,7 +247,7 @@ Produto::Produto(
 */
 
 string Produto::getCodigo() const{
-    this->codigo.getCodigoDeProduto();
+   return this->codigo.getCodigoDeProduto();
 }
 
 /**
@@ -269,7 +269,7 @@ void Produto::setCodigo(string codigo){
 */
 
 string Produto::getClasse() const{
-    this->classe.getText();
+    return this->classe.getText();
 }
 
 /**
@@ -292,7 +292,7 @@ void Produto::setClasse(string classe){
 */
 
 string Produto::getEmissor() const{
-    this->emissor.getCodigo();
+    return this->emissor.getCodigo();
 }
 
 /**
@@ -315,7 +315,7 @@ void Produto::setEmissor(string emissor){
 */
 
 int Produto::getPrazo() const{
-    this->prazo.getPrazo();
+    return this->prazo.getPrazo();
 }
 
 /**
@@ -338,7 +338,7 @@ void Produto::setPrazo(int prazo){
 */
 
 string Produto::getVencimento() const{
-    this->vencimento.getData();
+    return this->vencimento.getData();
 }
 
 /**
@@ -361,7 +361,7 @@ void Produto::setVencimento(string vencimento){
 */
 
 float Produto::getTaxa() const{
-    this->taxa.getTaxa();
+    return this->taxa.getTaxa();
 }
 
 /**
@@ -384,7 +384,7 @@ void Produto::setTaxa(float taxa){
 */
 
 string Produto::getHorario() const{
-    this->horario.getHorario();
+    return this->horario.getHorario();
 }
 
 /**
@@ -407,7 +407,7 @@ void Produto::setHorario(string horario){
 */
 
 float Produto::getValor() const{
-    this->valor.getValorMinimo();
+    return this->valor.getValorMinimo();
 }
 
 /**
@@ -453,7 +453,7 @@ Aplicacao::Aplicacao(
 */
 
 string Aplicacao::getCodigo() const{
-    this->codigo.getCodigoDeAplicacao();
+    return this->codigo.getCodigoDeAplicacao();
 }
 
 /**
@@ -476,7 +476,7 @@ void Aplicacao::setCodigo(string codigo){
 */
 
 float Aplicacao::getValor() const{
-    this->valor.getValor();
+    return this->valor.getValor();
 }
 
 /**

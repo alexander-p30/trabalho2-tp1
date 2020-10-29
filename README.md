@@ -11,6 +11,8 @@ Divisão das classes (implementação e teste de unidade):
   * NÚMERO
   * SENHA
   * VALOR DE APLICAÇÃO
+  * Entidade Usuario
+  * Entidade Contata 
   * Classe TestesDeDominio
 
 * 18/0061623
@@ -23,3 +25,5 @@ Divisão das classes (implementação e teste de unidade):
   * PRAZO
   * TAXA
   * VALOR MÍNIMO
+  * Entidade Aplicação
+  * Entidade Produto 
