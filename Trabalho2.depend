@@ -87,3 +87,35 @@
 	<iostream>
 	"entity_tests.h"
 
+1602961340 source:/home/alexander/Documents/unb/tp1/code/trabalho2/source/domains.cpp
+	"../headers/domains.h"
+	<iostream>
+	<ctype.h>
+
+1602962505 /home/alexander/Documents/unb/tp1/code/trabalho2/headers/domains.h
+	<string>
+
+1602962758 source:/home/alexander/Documents/unb/tp1/code/trabalho2/source/main.cpp
+	"../tests/domain_tests.h"
+	"../tests/entity_tests.h"
+	<iostream>
+
+1602935826 /home/alexander/Documents/unb/tp1/code/trabalho2/tests/domain_tests.h
+	"../headers/domains.h"
+	<string>
+
+1603976427 /home/alexander/Documents/unb/tp1/code/trabalho2/tests/entity_tests.h
+	"../headers/entities.h"
+
+1603976427 /home/alexander/Documents/unb/tp1/code/trabalho2/headers/entities.h
+	"domains.h"
+
+1602961090 source:/home/alexander/Documents/unb/tp1/code/trabalho2/tests/domain_tests.cpp
+	<iostream>
+	<string>
+	"domain_tests.h"
+
+1603976427 source:/home/alexander/Documents/unb/tp1/code/trabalho2/tests/entity_tests.cpp
+	<iostream>
+	"entity_tests.h"
+
