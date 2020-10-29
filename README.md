@@ -14,6 +14,7 @@ Divisão das classes (implementação e teste de unidade):
   * Entidade Usuario
   * Entidade Contata 
   * Classe TestesDeDominio
+  * Classe TestesDeEntidade
 
 * 18/0061623
   * CLASSE
