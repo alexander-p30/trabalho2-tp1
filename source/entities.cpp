@@ -130,7 +130,6 @@ void Usuario::setSenha(string senha) {
  * @param agencia String com código de agência da conta, a ser verificada pelo metodo CodigoDeAgencia::setCodigo().
  * @param numero String com número da conta, a ser verificada pelo metodo NumeroDeConta::setNumero().
  * @throw invalid_argument Se o método de validação de algum dos parâmetros falhar, lança exceção.
- *@mat
 */
 Conta::Conta(
     string banco,
