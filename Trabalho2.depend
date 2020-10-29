@@ -15,3 +15,39 @@
 	"../headers/Domains.h"
 	<string>
 
+1603737570 source:/home/lucas/UNB/TP1/trabalho2-tp1/source/domains.cpp
+	"../headers/domains.h"
+	<iostream>
+	<ctype.h>
+
+1603737570 /home/lucas/UNB/TP1/trabalho2-tp1/headers/domains.h
+	<string>
+
+1603762314 source:/home/lucas/UNB/TP1/trabalho2-tp1/source/entities.cpp
+	"../headers/entities.h"
+	<iostream>
+
+1603762256 /home/lucas/UNB/TP1/trabalho2-tp1/headers/entities.h
+	"domains.h"
+
+1603737570 source:/home/lucas/UNB/TP1/trabalho2-tp1/source/main.cpp
+	"../tests/domain_tests.h"
+	"../tests/entity_tests.h"
+	<iostream>
+
+1603737570 /home/lucas/UNB/TP1/trabalho2-tp1/tests/domain_tests.h
+	"../headers/domains.h"
+	<string>
+
+1603762498 /home/lucas/UNB/TP1/trabalho2-tp1/tests/entity_tests.h
+	"../headers/entities.h"
+
+1603737570 source:/home/lucas/UNB/TP1/trabalho2-tp1/tests/domain_tests.cpp
+	<iostream>
+	<string>
+	"domain_tests.h"
+
+1603763035 source:/home/lucas/UNB/TP1/trabalho2-tp1/tests/entity_tests.cpp
+	<iostream>
+	"entity_tests.h"
+

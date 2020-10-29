@@ -29,7 +29,7 @@ Usuario::Usuario(
   }
 }
 
-/** 
+/**
  * Método getter para nome de usuário.
  * @return String contendo o nome do usuário.
 */
@@ -48,7 +48,7 @@ void Usuario::setNome(string nome) {
   }
 }
 
-/** 
+/**
  * Método getter para endereço de usuário.
  * @return String contendo o endereço do usuário.
 */
@@ -67,7 +67,7 @@ void Usuario::setEndereco(string endereco) {
   }
 }
 
-/** 
+/**
  * Método getter para CEP de usuário.
  * @return Inteiro contendo o CEP do usuário.
 */
@@ -86,7 +86,7 @@ void Usuario::setCep(int cep) {
   }
 }
 
-/** 
+/**
  * Método getter para CPF de usuário.
  * @return String contendo o CPF do usuário.
 */
@@ -105,7 +105,7 @@ void Usuario::setCpf(string cpf) {
   }
 }
 
-/** 
+/**
  * Método getter para senha de usuário.
  * @return String contendo o senha do usuário.
 */
@@ -130,11 +130,11 @@ void Usuario::setSenha(string senha) {
  * @param agencia String com código de agência da conta, a ser verificada pelo metodo CodigoDeAgencia::setCodigo().
  * @param numero String com número da conta, a ser verificada pelo metodo NumeroDeConta::setNumero().
  * @throw invalid_argument Se o método de validação de algum dos parâmetros falhar, lança exceção.
- *
+ *@mat
 */
 Conta::Conta(
-    string banco, 
-    string agencia, 
+    string banco,
+    string agencia,
     string numero
   ) {
     try {
@@ -146,7 +146,7 @@ Conta::Conta(
   }
 }
 
-/** 
+/**
  * Método getter para código de banco da conta.
  * @return String contendo o código de banco da conta.
 */
@@ -165,7 +165,7 @@ void Conta::setBanco(string banco) {
   }
 }
 
-/** 
+/**
  * Método getter para código de agência da conta.
  * @return String contendo o código de agência da conta.
 */
@@ -181,10 +181,10 @@ void Conta::setAgencia(string agencia) {
     this->agencia.setCodigo(agencia);
   } catch(const invalid_argument& err) {
     throw invalid_argument(err.what());
-  } 
+  }
 }
 
-/** 
+/**
  * Método getter para o número da conta.
  * @return String contendo o número da conta.
 */
@@ -200,5 +200,321 @@ void Conta::setNumero(string numero) {
     this->numero.setNumero(numero);
   } catch(const invalid_argument& err) {
     throw invalid_argument(err.what());
-  } 
+  }
 }
+
+/**
+ * Método construtor de entidade Produto.
+ * @param codigo String com codigo de produto, a ser verificada pelo metodo Codigo::setCodigoDeProduto().
+ * @param classe String com calsse de produto a ser verificada pelo metodo Classe::setText().
+ * @param emissor String com emissor de produto, a ser verificado pelo metodo Emissor::setCodigo().
+ * @param prazo Inteiro com prazo de produto, a ser verificado pelo metodo Prazo::setPrazo().
+ * @param vencimento String com vencimento do produto, a ser verificado pelo metodo Data::setData().
+ * @param taxa Float com taxa do produto, a ser verificada pelo metodo Taxa::setTaxa().
+ * @param horario String com horario do produto, a ser verificado pelo metodo Horario::setHorario().
+ * @param valor Float com valor do produto, a ser verificado pelo metodo Valor::setValor().
+ * @throw invalid_argument Se o método de validação de algum dos parâmetros falhar, lança exceção.
+ *
+*/
+
+Produto::Produto(
+            string codigo,
+            string classe,
+            string emissor,
+            int prazo,
+            string vencimento,
+            float taxa,
+            string horario,
+            float valor
+        ){
+        try{
+            setCodigo(codigo);
+            setClasse(classe);
+            setEmissor(emissor);
+            setPrazo(prazo);
+            setVencimento(vencimento);
+            setTaxa(taxa);
+            setHorario(horario);
+            setValor(valor);
+        }catch(const invalid_argument& err) {
+            throw invalid_argument(err.what());
+        }
+}
+
+/**
+ * Método getter para nome de codigo de produto.
+ * @return String contendo o codigo do produto.
+*/
+
+string Produto::getCodigo() const{
+    this->codigo.getCodigoDeProduto();
+}
+
+/**
+ * Método setter para codigo de produto.
+ * @param codigo String contendo codigo do produto, a ser validado pelo método CodigoDeProduto::setCodigoDeProduto().
+*/
+
+void Produto::setCodigo(string codigo){
+    try{
+        this->codigo.setCodigoDeProduto(codigo);
+    }catch(const invalid_argument& err){
+        throw invalid_argument(err.what());
+    }
+}
+
+/**
+ * Método getter para nome de classe de produto.
+ * @return String contendo o classe do produto.
+*/
+
+string Produto::getClasse() const{
+    this->classe.getText();
+}
+
+/**
+ * Método setter para classe de produto.
+ * @param classe String contendo classe do produto, a ser validado pelo método Classe::setText().
+*/
+
+
+void Produto::setClasse(string classe){
+    try{
+        this->classe.setText(classe);
+    }catch(const invalid_argument& err){
+        throw invalid_argument(err.what());
+    }
+}
+
+/**
+ * Método getter para nome de emissor de produto.
+ * @return String contendo o emissor do produto.
+*/
+
+string Produto::getEmissor() const{
+    this->emissor.getCodigo();
+}
+
+/**
+ * Método setter para emissor de produto.
+ * @param emissor String contendo emissor do produto, a ser validado pelo método Emissor::setCodigo().
+*/
+
+
+void Produto::setEmissor(string emissor){
+    try{
+        this->emissor.setCodigo(emissor);
+    }catch(const invalid_argument& err){
+        throw invalid_argument(err.what());
+    }
+}
+
+/**
+ * Método getter para nome de prazo de produto.
+ * @return Int contendo o prazo do produto.
+*/
+
+int Produto::getPrazo() const{
+    this->prazo.getPrazo();
+}
+
+/**
+ * Método setter para prazo de produto.
+ * @param prazo Int contendo prazo do produto, a ser validado pelo método Prazo::setPrazo().
+*/
+
+
+void Produto::setPrazo(int prazo){
+    try{
+        this->prazo.setPrazo(prazo);
+    }catch(const invalid_argument& err){
+        throw invalid_argument(err.what());
+    }
+}
+
+/**
+ * Método getter para nome de vencimento de produto.
+ * @return String contendo o vencimento do produto.
+*/
+
+string Produto::getVencimento() const{
+    this->vencimento.getData();
+}
+
+/**
+ * Método setter para vencimento de produto.
+ * @param vencimento String contendo vencimento do produto, a ser validado pelo método Data::setData().
+*/
+
+
+void Produto::setVencimento(string vencimento){
+    try{
+        this->vencimento.setData(vencimento);
+    }catch(const invalid_argument& err){
+        throw invalid_argument(err.what());
+    }
+}
+
+/**
+ * Método getter para nome de taxa de produto.
+ * @return Float contendo a taxa do produto.
+*/
+
+float Produto::getTaxa() const{
+    this->taxa.getTaxa();
+}
+
+/**
+ * Método setter para taxa de produto.
+ * @param taxa Float contendo taxa do produto, a ser validada pelo método Taxa::setTaxa().
+*/
+
+
+void Produto::setTaxa(float taxa){
+    try{
+        this->taxa.setTaxa(taxa);
+    }catch(const invalid_argument& err){
+        throw invalid_argument(err.what());
+    }
+}
+
+/**
+ * Método getter para nome de horario de produto.
+ * @return String contendo o horario do produto.
+*/
+
+string Produto::getHorario() const{
+    this->horario.getHorario();
+}
+
+/**
+ * Método setter para horário de produto.
+ * @param horário String contendo horário do produto, a ser validado pelo método Horario::setHorario().
+*/
+
+
+void Produto::setHorario(string horario){
+    try{
+        this->horario.setHorario(horario);
+    }catch(const invalid_argument& err){
+        throw invalid_argument(err.what());
+    }
+}
+
+/**
+ * Método getter valor de produto.
+ * @return Float contendo o valor do produto.
+*/
+
+float Produto::getValor() const{
+    this->valor.getValorMinimo();
+}
+
+/**
+ * Método setter para valor de produto.
+ * @param valor Float contendo valor do produto, a ser validado pelo método ValorMinimo::setValorMinimo().
+*/
+
+
+void Produto::setValor(float valor){
+    try{
+        this->valor.setValorMinimo(valor);
+    }catch(const invalid_argument& err){
+        throw invalid_argument(err.what());
+    }
+}
+
+/**
+ * Método construtor de entidade Aplicação.
+ * @param codigo String com codigo de aplicação, a ser verificado pelo metodo CodigoDeAplicacao::setCodigoDeAplicacao().
+ * @param valor Float com valor de aplicação a ser verificada pelo metodo ValorDeAplicacao::setValor().
+ * @param Data String com data de aplicação a ser verificada pelo metodo Data::setData().
+ * @throw invalid_argument Se o método de validação de algum dos parâmetros falhar, lança exceção.
+ *
+*/
+
+Aplicacao::Aplicacao(
+            string codigo,
+            float valor,
+            string data
+        ){
+        try{
+            setCodigo(codigo);
+            setValor(valor);
+            setData(data);
+        }catch(const invalid_argument& err) {
+            throw invalid_argument(err.what());
+        }
+}
+
+/**
+ * Método getter para codigo de aplicação.
+ * @return String contendo o codigo de aplicaçao.
+*/
+
+string Aplicacao::getCodigo() const{
+    this->codigo.getCodigoDeAplicacao();
+}
+
+/**
+ * Método setter para codigo de aplicação.
+ * @param codigo String contendo codigo de aplicação, a ser validado pelo método CodigoDeAplicacao::setCodigoDeAplicacao().
+*/
+
+
+void Aplicacao::setCodigo(string codigo){
+    try{
+        this->codigo.setCodigoDeAplicacao(codigo);
+    }catch(const invalid_argument& err){
+        throw invalid_argument(err.what());
+    }
+}
+
+/**
+ * Método getter para valor de aplicação.
+ * @return Float contendo o valor de aplicaçao.
+*/
+
+float Aplicacao::getValor() const{
+    this->valor.getValor();
+}
+
+/**
+ * Método setter para valor de aplicação.
+ * @param valor Float contendo valor de aplicação, a ser validado pelo método ValorDeAplicacao::setValor().
+*/
+
+
+void Aplicacao::setValor(float valor){
+    try{
+        this->valor.setValor(valor);
+    }catch(const invalid_argument& err){
+        throw invalid_argument(err.what());
+    }
+}
+
+/**
+ * Método getter para data de aplicação.
+ * @return String contendo a data de aplicaçao.
+*/
+
+string Aplicacao::getData() const{
+    this->data.getData();
+}
+
+/**
+ * Método setter para data de aplicação.
+ * @param data String contendo data de aplicação, a ser validada pelo método Data::setData().
+*/
+
+
+void Aplicacao::setData(string data){
+    try{
+        this->data.setData(data);
+    }catch(const invalid_argument& err){
+        throw invalid_argument(err.what());
+    }
+}
+
+
+
