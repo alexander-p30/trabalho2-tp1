@@ -1,4 +1,4 @@
-#ifndef ENTITIES_H
-#define ENTITIES_H
+#ifndef INTERFACES_H
+#define INTERFACES_H
 
 #endif
