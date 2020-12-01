@@ -7,6 +7,7 @@
 #endif
 
 void clearscr() {
+  std::cout << std::endl;
   system(CLEAR);
 }
 

@@ -40,7 +40,9 @@ public:
 // Interfaces para apresentação
 class IApresentacaoAutenticacao {
 public:
-  virtual bool autenticar() = 0;
+  virtual void autenticar() = 0;
+  virtual void deslogar() = 0;
+  virtual void menu() = 0;
   virtual ~IApresentacaoAutenticacao(){}
 };
 
@@ -51,6 +53,21 @@ class IApresentacaoPessoal{
     virtual void setCntrServicoPessoal(IServicoPessoal*) = 0;
     //virtual void setCntrServicoProdutosFinanceiros(IServicoProdutosFinanceiros*) = 0;
     virtual ~IApresentacaoPessoal(){}
+};
+
+class IApresentacaoProduto {
+public:
+  virtual void cadastrar() = 0;
+  virtual void descadastrar() = 0;
+  virtual void listarProdutos() = 0;
+  virtual void menu() = 0;
+  virtual ~IApresentacaoProduto(){};
+};
+
+class IApresentacaoPrincipal {
+public:
+  virtual void menu() = 0;
+  virtual ~IApresentacaoPrincipal(){}
 };
 
 

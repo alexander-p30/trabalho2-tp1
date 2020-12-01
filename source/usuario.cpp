@@ -24,23 +24,11 @@ bool CntrContainerUsuario::criarUsuario(string nome, string endereco, int cep, s
     return false;
   }
 
-  bool usuarioCriado = containerUsuario->addUsuario(*usuario);
-  if(usuarioCriado) {
-    cout << "Usuário criado com sucesso!" << endl;
-  } else {
-    cout << "Falha ao criar usuário: cpf " << cpf << " já utilizado." << endl;
-  }
-  return usuarioCriado;
+  return containerUsuario->addUsuario(*usuario);
 }
 
 bool CntrContainerUsuario::excluirUsuarioPorCpf(string cpf) {
-  if(containerUsuario->remUsuarioPorCpf(cpf)) {
-    cout << "Usuário com cpf " << cpf << " excluído com sucesso!" << endl;
-    return true;
-  }
-
-  cout << "Nenhum usuário com cpf " << cpf << " encontrado. Verifique o cpf fornecido e tente novamente." << endl;
-  return false;
+  return containerUsuario->remUsuarioPorCpf(cpf);
 }
 
 void CntrContainerUsuario::listarUsuarios() {

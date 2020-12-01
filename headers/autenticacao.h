@@ -22,7 +22,9 @@ private:
   static CntrApresentacaoAutenticacao *instancia;
   static CntrServicoAutenticacao *cntrServicoAutenticacao;
 public:
-  virtual bool autenticar();
+  virtual void autenticar();
+  virtual void deslogar();
+  virtual void menu();
   static CntrApresentacaoAutenticacao* getInstancia();
 };
 

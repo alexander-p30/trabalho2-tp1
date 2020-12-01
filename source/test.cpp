@@ -2,6 +2,8 @@
 #include "../headers/usuario.h"
 #include "../headers/produtos.h"
 #include "../headers/pessoal.h"
+#include "../utils/tela.h"
+#include "../headers/principal.h"
 #include <iostream>
 #include <string>
 
@@ -68,15 +70,12 @@ void buildTesteProdutos() {
 }
 
 int main() {
-  CntrServicoAutenticacao *cntrServicoAutenticacao = CntrServicoAutenticacao::getInstancia();
-  CntrApresentacaoAutenticacao *cntrApresentacaoAutenticacao = CntrApresentacaoAutenticacao::getInstancia();
+  CntrApresentacaoPrincipal *cntrApresentacaoPrincipal = CntrApresentacaoPrincipal::getInstancia();
 
   buildTesteUsuarios();
   buildTesteProdutos();
-  // cntrApresentacaoAutenticacao->autenticar();
-// 
-  // cout << cntrServicoAutenticacao->getUsuarioAtual()->getNome() << endl;
-  // cout << cntrServicoAutenticacao->getUsuarioAtual()->getCpf() << endl;
+
+  cntrApresentacaoPrincipal->menu();
 
   return 0;
 }

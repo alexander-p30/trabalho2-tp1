@@ -17,4 +17,16 @@ public:
   virtual Produto* buscarProdutoPorCodigo(string codigo);
 };
 
+class CntrApresentacaoProduto:public IApresentacaoProduto {
+private:
+  static CntrApresentacaoProduto *instancia;
+  static CntrContainerProduto *cntrContainerProduto;
+public:
+  static CntrApresentacaoProduto* getInstancia();
+  virtual void cadastrar();
+  virtual void descadastrar();
+  virtual void listarProdutos();
+  virtual void menu();
+};
+
 #endif
