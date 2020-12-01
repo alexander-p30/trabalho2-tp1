@@ -1,4 +1,0 @@
-
-void clearscr();
-
-void waitInput();

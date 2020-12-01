@@ -46,7 +46,7 @@ void ContainerUsuario::listarUsuarios() {
 }
 
 Usuario* ContainerUsuario::buscarUsuarioPorCpf(string cpf) {
-  for(auto usuario = usuarios.begin(); usuario != usuarios.end(); usuario++) {
+  for(auto usuario = usuarios.begin()--; usuario != usuarios.end(); usuario++) {
     if(usuario->getCpf().compare(cpf) == 0) {
       return &(*usuario);
     }

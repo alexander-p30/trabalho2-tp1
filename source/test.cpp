@@ -11,6 +11,7 @@ int main() {
   CntrServicoAutenticacao *cntrServicoAutenticacao = CntrServicoAutenticacao::getInstancia();
   CntrContainerUsuario *cntrContainerUsuario = CntrContainerUsuario::getInstancia();
   CntrServicoPessoal *cntrServicoPessoal = CntrServicoPessoal::getInstancia();
+  CntrApresentacaoAutenticacao *cntrApresentacaoAutenticacao = CntrApresentacaoAutenticacao::getInstancia();
 
   string nome = "Estevan Alexander";
   string endereco = "Rua da batata";
@@ -36,26 +37,10 @@ int main() {
   cntrContainerUsuario->listarUsuarios();
   cout << "-------------------------" << endl;
 
-  /*cout << "Digite seu CPF: ";
-  cin >> cpf;
-  cout << "Digite sua senha: ";
-  cin >> senha;
+  cntrApresentacaoAutenticacao->autenticar();
 
-  if(cntrServicoAutenticacao->autenticar(cpf, senha)) {
-     cout << "Login bem sucedido!" << endl;
-  } else {
-     cout << "Login mal sucedido!" << endl;
-  }*/
-
-  if(cntrServicoPessoal->cadastrarUsuario("Estevan Alexander", "Rua da batata", 1234567, "031.360.531-92", "876543")) {
-     cout << "Cadastro bem sucedido!" << endl;
-  } else {
-     cout << "Cadastro mal sucedido!" << endl;
-  }
-
-  cout << "-------------------------" << endl;
-  cntrContainerUsuario->listarUsuarios();
-  cout << "-------------------------" << endl;
+  cout << cntrServicoAutenticacao->getUsuarioAtual()->getNome() << endl;
+  cout << cntrServicoAutenticacao->getUsuarioAtual()->getCpf() << endl;
 
   return 0;
 }

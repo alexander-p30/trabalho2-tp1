@@ -9,6 +9,7 @@
 class IServicoAutenticacao {
 public:
   virtual bool autenticar(string cpf, string senha) = 0;
+  virtual bool deslogar() = 0;
   virtual ~IServicoAutenticacao(){}
 };
 
