@@ -17,6 +17,7 @@ public:
   bool addUsuario(Usuario usuario);
   bool remUsuarioPorCpf(string cpf);
   void listarUsuarios();
+  Usuario* buscarUsuarioPorCpf(string cpf);
 };
 
 #endif

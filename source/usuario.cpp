@@ -46,3 +46,7 @@ bool CntrContainerUsuario::excluirUsuarioPorCpf(string cpf) {
 void CntrContainerUsuario::listarUsuarios() {
   usuarios->listarUsuarios();
 }
+
+Usuario* CntrContainerUsuario::buscarUsuarioPorCpf(string cpf) {
+  return usuarios->buscarUsuarioPorCpf(cpf);
+}

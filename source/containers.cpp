@@ -44,3 +44,13 @@ void ContainerUsuario::listarUsuarios() {
     cout << usuario->getNome() << " - " << usuario->getCpf() << endl;
   }
 }
+
+Usuario* ContainerUsuario::buscarUsuarioPorCpf(string cpf) {
+  for(auto usuario = usuarios.begin(); usuario != usuarios.end(); usuario++) {
+    if(usuario->getCpf().compare(cpf) == 0) {
+      return &(*usuario);
+    }
+  }
+
+  return nullptr;
+}
