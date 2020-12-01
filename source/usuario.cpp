@@ -5,7 +5,7 @@
 using namespace std;
 
 CntrContainerUsuario* CntrContainerUsuario::instancia = nullptr;
-ContainerUsuario* CntrContainerUsuario::usuarios = ContainerUsuario::getInstancia();
+ContainerUsuario* CntrContainerUsuario::containerUsuario = ContainerUsuario::getInstancia();
 
 CntrContainerUsuario* CntrContainerUsuario::getInstancia() {
   if(instancia == nullptr) {
@@ -24,7 +24,7 @@ bool CntrContainerUsuario::criarUsuario(string nome, string endereco, int cep, s
     return false;
   }
 
-  bool usuarioCriado = usuarios->addUsuario(*usuario);
+  bool usuarioCriado = containerUsuario->addUsuario(*usuario);
   if(usuarioCriado) {
     cout << "Usuário criado com sucesso!" << endl;
   } else {
@@ -34,7 +34,7 @@ bool CntrContainerUsuario::criarUsuario(string nome, string endereco, int cep, s
 }
 
 bool CntrContainerUsuario::excluirUsuarioPorCpf(string cpf) {
-  if(usuarios->remUsuarioPorCpf(cpf)) {
+  if(containerUsuario->remUsuarioPorCpf(cpf)) {
     cout << "Usuário com cpf " << cpf << " excluído com sucesso!" << endl;
     return true;
   }
@@ -44,9 +44,9 @@ bool CntrContainerUsuario::excluirUsuarioPorCpf(string cpf) {
 }
 
 void CntrContainerUsuario::listarUsuarios() {
-  usuarios->listarUsuarios();
+  containerUsuario->listarUsuarios();
 }
 
 Usuario* CntrContainerUsuario::buscarUsuarioPorCpf(string cpf) {
-  return usuarios->buscarUsuarioPorCpf(cpf);
+  return containerUsuario->buscarUsuarioPorCpf(cpf);
 }
