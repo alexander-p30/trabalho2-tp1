@@ -20,4 +20,17 @@ public:
   Usuario* buscarUsuarioPorCpf(string cpf);
 };
 
+class ContainerProduto {
+private:
+  static ContainerProduto* instancia;
+  static vector<Produto> produtos;
+public:
+  static ContainerProduto* getInstancia();
+  vector <Produto> getProdutos();
+  bool addProduto(Produto produto);
+  bool remProdutoPorCodigo(string codigo);
+  void listarProdutos();
+  Produto* buscarProdutoPorCodigo(string codigo);
+};
+
 #endif

@@ -28,6 +28,15 @@ public:
   virtual ~IContainerUsuario(){}
 };
 
+class IContainerProduto {
+public:
+  virtual bool criarProduto(string codigo, string classe, string emissor, int prazo, string vencimento, float taxa, string horario, float valor) = 0;
+  virtual bool excluirProdutoPorCodigo(string codigo) = 0;
+  virtual void listarProdutos() = 0;
+  virtual Produto* buscarProdutoPorCodigo(string codigo) = 0;
+  virtual ~IContainerProduto(){}
+};
+
 // Interfaces para apresentação
 class IApresentacaoAutenticacao {
 public:
