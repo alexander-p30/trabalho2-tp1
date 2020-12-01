@@ -6,7 +6,8 @@
 using namespace std;
 
 CntrServicoAutenticacao* CntrServicoAutenticacao::instancia = nullptr;
-CntrContainerUsuario* CntrServicoAutenticacao::servidor = CntrContainerUsuario::getInstancia();
+CntrContainerUsuario* CntrServicoAutenticacao::cntrContainerUsuario = CntrContainerUsuario::getInstancia();
+Usuario* CntrServicoAutenticacao::usuarioAtual = nullptr;
 
 CntrServicoAutenticacao* CntrServicoAutenticacao::getInstancia() {
   if(instancia == nullptr) {
@@ -17,16 +18,34 @@ CntrServicoAutenticacao* CntrServicoAutenticacao::getInstancia() {
 }
 
 bool CntrServicoAutenticacao::autenticar(string cpf, string senha) {
-  Usuario *usuario = servidor->buscarUsuarioPorCpf(cpf); 
+  Usuario *usuario = cntrContainerUsuario->buscarUsuarioPorCpf(cpf); 
   if(usuario == nullptr) {
     return false; 
   }
 
-  return usuario->getSenha().compare(senha) == 0;
+  bool login = usuario->getSenha().compare(senha) == 0;
+
+  usuarioAtual = login ? usuario : nullptr;
+
+  return login;
+}
+
+bool CntrServicoAutenticacao::deslogar() {
+  if(usuarioAtual == nullptr) {
+    return false;
+  }
+
+  usuarioAtual = nullptr;
+
+  return true;
+}
+
+Usuario* CntrServicoAutenticacao::getUsuarioAtual() {
+  return usuarioAtual;
 }
 
 CntrApresentacaoAutenticacao* CntrApresentacaoAutenticacao::instancia = nullptr;
-CntrServicoAutenticacao* CntrApresentacaoAutenticacao::servidor = CntrServicoAutenticacao::getInstancia();
+CntrServicoAutenticacao* CntrApresentacaoAutenticacao::cntrServicoAutenticacao = CntrServicoAutenticacao::getInstancia();
 
 CntrApresentacaoAutenticacao* CntrApresentacaoAutenticacao::getInstancia() {
   if(instancia == nullptr) {
@@ -45,7 +64,7 @@ bool CntrApresentacaoAutenticacao::autenticar() {
     cin >> cpf;
     cout << "Insira a senha do usuário: ";
     cin >> senha;
-    if(servidor->autenticar(cpf,senha)) {
+    if(cntrServicoAutenticacao->autenticar(cpf,senha)) {
       break;
     }
     cout << "Autenticação falhou. Por favor, tente novamente." << endl;

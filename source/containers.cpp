@@ -46,9 +46,64 @@ void ContainerUsuario::listarUsuarios() {
 }
 
 Usuario* ContainerUsuario::buscarUsuarioPorCpf(string cpf) {
-  for(auto usuario = usuarios.begin(); usuario != usuarios.end(); usuario++) {
+  for(auto usuario = usuarios.begin()--; usuario != usuarios.end(); usuario++) {
     if(usuario->getCpf().compare(cpf) == 0) {
       return &(*usuario);
+    }
+  }
+
+  return nullptr;
+}
+
+ContainerProduto* ContainerProduto::instancia = nullptr;
+vector<Produto> ContainerProduto::produtos = {};
+
+ContainerProduto* ContainerProduto::getInstancia() {
+  if(instancia == nullptr) {
+    instancia = new ContainerProduto();
+  }
+
+  return instancia;
+}
+
+vector<Produto> ContainerProduto::getProdutos() {
+  return produtos;
+}
+
+bool ContainerProduto::addProduto(Produto produto) {
+  string codigoNovoProduto = produto.getCodigo();
+  for(auto produto = produtos.begin(); produto != produtos.end(); produto++) {
+    if(produto->getCodigo().compare(codigoNovoProduto) == 0) {
+      return false;
+    }
+  }
+  produtos.push_back(produto);
+
+  return true;
+}
+
+bool ContainerProduto::remProdutoPorCodigo(string codigo) {
+  for(auto produto = produtos.begin(); produto != produtos.end(); produto++) {
+    if(produto->getCodigo().compare(codigo) == 0) {
+      const auto posicaoProduto = produto--;
+      produtos.erase(posicaoProduto);
+      return true;
+    }
+  }
+
+  return false;
+}
+
+void ContainerProduto::listarProdutos() {
+  for(auto produto = produtos.begin(); produto != produtos.end(); produto++) {
+    cout << produto->getCodigo() << "/" << produto->getEmissor() << endl;
+  }
+}
+
+Produto* ContainerProduto::buscarProdutoPorCodigo(string codigo) {
+  for(auto produto = produtos.begin()--; produto != produtos.end(); produto++) {
+    if(produto->getCodigo().compare(codigo) == 0) {
+      return &(*produto);
     }
   }
 

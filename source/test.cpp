@@ -1,17 +1,15 @@
 #include "../headers/autenticacao.h"
 #include "../headers/usuario.h"
+#include "../headers/produtos.h"
 #include "../headers/pessoal.h"
 #include <iostream>
 #include <string>
 
 using namespace std;
 
-int main() {
-
-  CntrServicoAutenticacao *cntrServicoAutenticacao = CntrServicoAutenticacao::getInstancia();
+void buildTesteUsuarios() {
   CntrContainerUsuario *cntrContainerUsuario = CntrContainerUsuario::getInstancia();
-  CntrServicoPessoal *cntrServicoPessoal = CntrServicoPessoal::getInstancia();
-
+  
   string nome = "Estevan Alexander";
   string endereco = "Rua da batata";
   int cep = 1234567;
@@ -35,27 +33,50 @@ int main() {
   cout << "-------------------------" << endl;
   cntrContainerUsuario->listarUsuarios();
   cout << "-------------------------" << endl;
+}
 
-  /*cout << "Digite seu CPF: ";
-  cin >> cpf;
-  cout << "Digite sua senha: ";
-  cin >> senha;
+void buildTesteProdutos() {
+  CntrContainerProduto *cntrContainerProduto = CntrContainerProduto::getInstancia();
 
-  if(cntrServicoAutenticacao->autenticar(cpf, senha)) {
-     cout << "Login bem sucedido!" << endl;
-  } else {
-     cout << "Login mal sucedido!" << endl;
-  }*/
+  string codigo = "111", classe = "CDB", emissor = "ABCD39-SA.K A8HDASD88", vencimento = "26/09/2021", horario = "13:59";
+  int prazo = 6;
+  float taxa = 2.3, valor = 1000;
 
-  if(cntrServicoPessoal->cadastrarUsuario("Estevan Alexander", "Rua da batata", 1234567, "031.360.531-92", "876543")) {
-     cout << "Cadastro bem sucedido!" << endl;
-  } else {
-     cout << "Cadastro mal sucedido!" << endl;
-  }
+  cntrContainerProduto->criarProduto(codigo, classe, emissor, prazo, vencimento, taxa, horario, valor);
+  codigo = "123";
+  cntrContainerProduto->criarProduto(codigo, classe, emissor, prazo, vencimento, taxa, horario, valor);
+  codigo = "321";
+  cntrContainerProduto->criarProduto(codigo, classe, emissor, prazo, vencimento, taxa, horario, valor);
+  codigo = "666";
+  cntrContainerProduto->criarProduto(codigo, classe, emissor, prazo, vencimento, taxa, horario, valor);
+  cntrContainerProduto->criarProduto(codigo, classe, emissor, prazo, vencimento, taxa, horario, valor);
+  cntrContainerProduto->criarProduto(codigo, classe, emissor, prazo, vencimento, taxa, horario, valor);
 
-  cout << "-------------------------" << endl;
-  cntrContainerUsuario->listarUsuarios();
-  cout << "-------------------------" << endl;
+  cntrContainerProduto->listarProdutos();
+
+  cout << endl;
+
+  cntrContainerProduto->excluirProdutoPorCodigo("321");
+  
+  cntrContainerProduto->listarProdutos();
+
+  cout << endl;
+
+  Produto *produto = cntrContainerProduto->buscarProdutoPorCodigo("123");
+
+  cout << produto->getCodigo() << "/" << produto->getEmissor();
+}
+
+int main() {
+  CntrServicoAutenticacao *cntrServicoAutenticacao = CntrServicoAutenticacao::getInstancia();
+  CntrApresentacaoAutenticacao *cntrApresentacaoAutenticacao = CntrApresentacaoAutenticacao::getInstancia();
+
+  buildTesteUsuarios();
+  buildTesteProdutos();
+  // cntrApresentacaoAutenticacao->autenticar();
+// 
+  // cout << cntrServicoAutenticacao->getUsuarioAtual()->getNome() << endl;
+  // cout << cntrServicoAutenticacao->getUsuarioAtual()->getCpf() << endl;
 
   return 0;
 }

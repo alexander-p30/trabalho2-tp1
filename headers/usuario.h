@@ -8,7 +8,7 @@
 class CntrContainerUsuario:public IContainerUsuario {
 private:
   static CntrContainerUsuario *instancia;
-  static ContainerUsuario *usuarios;
+  static ContainerUsuario *containerUsuario;
 public:
   static CntrContainerUsuario* getInstancia();
   virtual bool criarUsuario(string nome, string endereco, int cep, string cpf, string senha);
