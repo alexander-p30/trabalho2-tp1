@@ -2,7 +2,7 @@
 #include "../tests/entity_tests.h"
 #include <iostream>
 
-int main() {
+/*int main() {
   TestesDeDominio testesDominio;
   TestesDeEntidade testesEntidade;
   cout.precision(15);
@@ -28,4 +28,4 @@ int main() {
   }
 
   return 0;
-}
+}*/

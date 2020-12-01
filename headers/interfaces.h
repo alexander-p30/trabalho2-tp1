@@ -12,6 +12,12 @@ public:
   virtual ~IServicoAutenticacao(){}
 };
 
+class IServicoPessoal{
+  public:
+    virtual bool cadastrarUsuario(string nome, string endereco, int cep, string cpf, string senha) = 0;
+    virtual ~IServicoPessoal(){}
+};
+
 class IContainerUsuario {
 public:
   virtual bool criarUsuario(string nome, string endereco, int cep, string cpf, string senha) = 0;
@@ -27,5 +33,15 @@ public:
   virtual bool autenticar() = 0;
   virtual ~IApresentacaoAutenticacao(){}
 };
+
+class IApresentacaoPessoal{
+  public:
+    virtual void executar(string cpf) = 0;
+    virtual void cadastrar() = 0;
+    virtual void setCntrServicoPessoal(IServicoPessoal*) = 0;
+    //virtual void setCntrServicoProdutosFinanceiros(IServicoProdutosFinanceiros*) = 0;
+    virtual ~IApresentacaoPessoal(){}
+};
+
 
 #endif
