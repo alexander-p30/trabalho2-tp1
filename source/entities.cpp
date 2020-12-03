@@ -29,6 +29,7 @@ Usuario::Usuario(
   }
 }
 
+
 /**
  * Método getter para nome de usuário.
  * @return String contendo o nome do usuário.

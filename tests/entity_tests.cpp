@@ -42,7 +42,7 @@ void TUUsuario::cenarioValido() {
       cout << "\t\tEndereço válido setado com sucesso." << endl;
 
       cout << "\t\tTestando CEP válido " << CEP_VALIDO[i] << endl;
-      usuario->setCep(CEP_VALIDO[i]);
+      usuario->setCep(CEP_VALIDO[i]);using namespace std;
       cout << "\t\tCEP válido setado com sucesso." << endl;
 
       cout << "\t\tTestando CPF válido " << CPF_VALIDO[i] << endl;
@@ -61,7 +61,7 @@ void TUUsuario::cenarioValido() {
 
 void TUUsuario::cenarioInvalido() {
   const int tamanhoArr = 3;
-  int i = 0;
+  int i = 0;Conta *account;
   for (i = 0; i <= tamanhoArr - 1; i++) {
     try {
       cout << "\t\tTestando nome inválido " << NOME_INVALIDO[i] << endl;
