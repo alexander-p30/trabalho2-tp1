@@ -16,6 +16,9 @@ Divisão das classes (implementação e teste de unidade):
   * Entidade Contata 
   * Classe TestesDeDominio
   * Classe TestesDeEntidade
+  * Camada de serviço e autenticação para usuario e produto
+	
+
 
 * 18/0061623
   * CLASSE
@@ -29,3 +32,4 @@ Divisão das classes (implementação e teste de unidade):
   * VALOR MÍNIMO
   * Entidade Aplicação
   * Entidade Produto 
+  * Camada de serviço e autenticação para pessoal

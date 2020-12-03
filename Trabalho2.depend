@@ -394,7 +394,7 @@
 1607016735 /home/lucas/tp1-test/trabalho3-tp1/tests/entity_tests.h
 	"../headers/entities.h"
 
-1607021224 source:/home/lucas/tp1-test/trabalho3-tp1/source/pessoal.cpp
+1607021775 source:/home/lucas/tp1-test/trabalho3-tp1/source/pessoal.cpp
 	"../headers/pessoal.h"
 	"../utils/tela.h"
 	"../headers/containers.h"
@@ -457,7 +457,7 @@
 1607016735 source:/home/lucas/tp1-test/trabalho3-tp1/utils/tela.cpp
 	<iostream>
 
-1607018887 source:/home/lucas/tp1-test/trabalho3-tp1/source/principal.cpp
+1607029316 source:/home/lucas/tp1-test/trabalho3-tp1/source/principal.cpp
 	"../headers/principal.h"
 	"../utils/tela.h"
 	<iostream>

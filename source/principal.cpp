@@ -22,7 +22,7 @@ void CntrApresentacaoPrincipal::menu() {
   while(executar) {
     clearscr();
     cout << "Seja bem-vindo(a)!" << endl;
-    cout << "1. Autenticação\n2. Produtos\n3. Cadastrar Usuario e Conta\n0. Fechar" << endl;
+    cout << "1. Autenticação\n2. Produtos\n3. Pessoal\n0. Fechar" << endl;
     cin >> op;
     switch(op) {
       case 1:
