@@ -334,3 +334,131 @@
 1606829922 source:/home/lucas/UNB/TP1/trabalho3-tp1/utils/tela.cpp
 	<iostream>
 
+1607018548 source:/home/lucas/tp1-test/trabalho3-tp1/source/autenticacao.cpp
+	"../headers/autenticacao.h"
+	"../utils/tela.h"
+	<iostream>
+	<string>
+
+1607018538 /home/lucas/tp1-test/trabalho3-tp1/headers/autenticacao.h
+	"interfaces.h"
+	"domains.h"
+	"usuario.h"
+
+1607016735 /home/lucas/tp1-test/trabalho3-tp1/headers/interfaces.h
+	"entities.h"
+	"containers.h"
+	<string>
+
+1607016735 /home/lucas/tp1-test/trabalho3-tp1/headers/entities.h
+	"domains.h"
+
+1607016735 /home/lucas/tp1-test/trabalho3-tp1/headers/domains.h
+	<string>
+
+1607016735 /home/lucas/tp1-test/trabalho3-tp1/headers/containers.h
+	"entities.h"
+	<string>
+	<vector>
+
+1607016735 /home/lucas/tp1-test/trabalho3-tp1/headers/usuario.h
+	"interfaces.h"
+	"containers.h"
+	"entities.h"
+
+1607016735 /home/lucas/tp1-test/trabalho3-tp1/utils/tela.h
+
+1607016735 source:/home/lucas/tp1-test/trabalho3-tp1/source/containers.cpp
+	"../headers/containers.h"
+	<vector>
+	<iostream>
+
+1607016735 source:/home/lucas/tp1-test/trabalho3-tp1/source/domains.cpp
+	"../headers/domains.h"
+	<iostream>
+	<ctype.h>
+
+1607016735 source:/home/lucas/tp1-test/trabalho3-tp1/source/entities.cpp
+	"../headers/entities.h"
+	<iostream>
+
+1607016735 source:/home/lucas/tp1-test/trabalho3-tp1/source/main.cpp
+	"../tests/domain_tests.h"
+	"../tests/entity_tests.h"
+	<iostream>
+
+1607016735 /home/lucas/tp1-test/trabalho3-tp1/tests/domain_tests.h
+	"../headers/domains.h"
+	<string>
+
+1607016735 /home/lucas/tp1-test/trabalho3-tp1/tests/entity_tests.h
+	"../headers/entities.h"
+
+1607021224 source:/home/lucas/tp1-test/trabalho3-tp1/source/pessoal.cpp
+	"../headers/pessoal.h"
+	"../utils/tela.h"
+	"../headers/containers.h"
+	"../headers/usuario.h"
+	"../headers/autenticacao.h"
+	<vector>
+	<iostream>
+	<string>
+	<stdlib.h>
+	<curses.h>
+
+1607021219 /home/lucas/tp1-test/trabalho3-tp1/headers/pessoal.h
+	"interfaces.h"
+	"domains.h"
+	"../headers/containers.h"
+	"../headers/usuario.h"
+
+1607016735 source:/home/lucas/tp1-test/trabalho3-tp1/source/produtos.cpp
+	"../headers/produtos.h"
+	"../headers/containers.h"
+	"../utils/tela.h"
+	<iostream>
+
+1607016735 /home/lucas/tp1-test/trabalho3-tp1/headers/produtos.h
+	"interfaces.h"
+	"containers.h"
+	"entities.h"
+
+1607021351 source:/home/lucas/tp1-test/trabalho3-tp1/source/test.cpp
+	"../headers/autenticacao.h"
+	"../headers/usuario.h"
+	"../headers/produtos.h"
+	"../headers/pessoal.h"
+	"../utils/tela.h"
+	"../headers/principal.h"
+	<iostream>
+	<string>
+
+1607017190 /home/lucas/tp1-test/trabalho3-tp1/headers/principal.h
+	"interfaces.h"
+	"usuario.h"
+	"produtos.h"
+	"pessoal.h"
+	"autenticacao.h"
+
+1607020420 source:/home/lucas/tp1-test/trabalho3-tp1/source/usuario.cpp
+	"../headers/usuario.h"
+	"../headers/containers.h"
+	<iostream>
+
+1607016735 source:/home/lucas/tp1-test/trabalho3-tp1/tests/domain_tests.cpp
+	<iostream>
+	<string>
+	"domain_tests.h"
+
+1607016735 source:/home/lucas/tp1-test/trabalho3-tp1/tests/entity_tests.cpp
+	<iostream>
+	"entity_tests.h"
+
+1607016735 source:/home/lucas/tp1-test/trabalho3-tp1/utils/tela.cpp
+	<iostream>
+
+1607018887 source:/home/lucas/tp1-test/trabalho3-tp1/source/principal.cpp
+	"../headers/principal.h"
+	"../utils/tela.h"
+	<iostream>
+

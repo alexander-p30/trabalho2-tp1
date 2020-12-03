@@ -78,7 +78,7 @@ void CntrApresentacaoAutenticacao::autenticar() {
     cout << "Autenticação falhou. Por favor, tente novamente." << endl;
     waitInput();
   }
-  
+
   cout << "Autenticação realizada com sucesso!" << endl;
   cout << "Bem-vindo(a), " << cntrServicoAutenticacao->getUsuarioAtual()->getNome() << "!" << endl;
   waitInput();

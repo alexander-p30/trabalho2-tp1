@@ -26,18 +26,17 @@ CntrServicoPessoal* CntrServicoPessoal::getInstancia() {
   return instancia;
 }
 
+bool CntrServicoPessoal::cadastrarUsuario(string nome, string endereco, int cep, string cpf, string senha, string banco, string agencia, string numero){
+  CntrContainerUsuario *cntrContainerUsuario = CntrContainerUsuario::getInstancia();
+
+  return cntrContainerUsuario->cadastrarUsuario(nome, endereco, cep, cpf, senha, banco, agencia, numero);
+}
+
 CntrApresentacaoPessoal* CntrApresentacaoPessoal::getInstancia() {
   if(instancia == nullptr){
     instancia = new CntrApresentacaoPessoal();
   }
   return instancia;
-}
-
-
-bool CntrServicoPessoal::cadastrarUsuario(string nome, string endereco, int cep, string cpf, string senha, string banco, string agencia, string numero){
-  CntrContainerUsuario *cntrContainerUsuario = CntrContainerUsuario::getInstancia();
-
-  return cntrContainerUsuario->cadastrarUsuario(nome, endereco, cep, cpf, senha, banco, agencia, numero);
 }
 
 void CntrApresentacaoPessoal::cadastrar(){
@@ -58,10 +57,8 @@ void CntrApresentacaoPessoal::cadastrar(){
     string campo1, campo2, campo4, campo5;
     string campo6, campo7, campo8;
     int campo3;
-
     cout << texto1 << endl;
     cout << texto2 << " ";
-    cin.clear();
     getline(cin, campo1);
     cout << texto3 << " ";
     getline(cin, campo2);
@@ -78,69 +75,67 @@ void CntrApresentacaoPessoal::cadastrar(){
     cout << texto9 << " ";
     cin >> campo8;
 
-    if(cntrServicoPessoal->cadastrarUsuario(campo1, campo2, campo3, campo4, campo5,campo8, campo7, campo6)){
+    if(cntrServicoPessoal->cadastrarUsuario(campo1, campo2, campo3, campo4, campo5, campo8, campo7, campo6)){
+        cout << "usuario e conta cadastrados com sucesso, digite algo para retornar" << endl;
+        waitInput();
         return;
     }
-
-    //waitInput();
-
+    cout << "falha no cadastramento, digite algo para retornar"<< endl;
+    waitInput();
     return;
 }
 
 void CntrApresentacaoPessoal::consultarDadosPessoais(){
     CntrServicoAutenticacao *cntrServicoAutenticacao = CntrServicoAutenticacao::getInstancia();
-    Usuario *current_user = cntrServicoAutenticacao->getUsuarioAtual();
-    Nome nome;
-    Endereco endereco;
-    Cep cep;
-    Cpf cpf;
-    Senha senha;
-    NumeroDeConta numero;
-    CodigoDeAgencia agencia;
-    CodigoDeBanco banco;
-    cout << "dados pessoais" << endl;
-    cout << "Nome: ";
-    cout << current_user->getNome() << endl;
-    cout << "Endereco: ";
-    cout << current_user->getEndereco() << endl;
-    cout << "Cep: ";
-    cout << current_user->getCep() << endl;
-    cout << "Cpf: ";
-    cout << current_user->getCpf() << endl;
-    cout << "Senha: ";
-    cout << current_user->getSenha() << endl;
-    cout << "Numero de conta ";
-    cout << current_user->account->getNumero() << endl;
-    cout << "Codigo de agencia ";
-    cout << current_user->account->getAgencia() << endl;
-    cout << "Codigo de banco ";
-    cout << current_user->account->getBanco() << endl;
-    return;
+    if(cntrServicoAutenticacao->getUsuarioAtual() != nullptr) {
+        Usuario *current_user = cntrServicoAutenticacao->getUsuarioAtual();
+        cout << "dados pessoais" << endl;
+        cout << "Nome: ";
+        cout << current_user->getNome() << endl;
+        cout << "Endereco: ";
+        cout << current_user->getEndereco() << endl;
+        cout << "Cep: ";
+        cout << current_user->getCep() << endl;
+        cout << "Cpf: ";
+        cout << current_user->getCpf() << endl;
+        cout << "Senha: ";
+        cout << current_user->getSenha() << endl;
+        cout << "Numero de conta ";
+        cout << current_user->account->getNumero() << endl;
+        cout << "Codigo de agencia ";
+        cout << current_user->account->getAgencia() << endl;
+        cout << "Codigo de banco ";
+        cout << current_user->account->getBanco() << endl;
+        cout << "digite algo para retornar" << endl;
+        waitInput();
+        return;
+    }else{
+        cout << "faça login para ver seus dados pessoais" << endl;
+        cout << "digite algo para fechar" << endl;
+        waitInput();
+        return;
+    }
 
 }
 
 void CntrApresentacaoPessoal::executar(){
-
-    char texto1[]="Selecione um dos servicos : ";
-    char texto2[]="1 - Consultar dados pessoais.";
-    char texto3[]="2 - Retornar.";
-
     int campo;
     bool apresentar = true;
 
     while(apresentar){
 
         clearscr();
-
-        cout << texto1 << endl;
-        cout << texto2 << endl;
-        cout << texto3 << endl;
+        cout << "Gerenciamento Pessoal" << endl;
+        cout << "1. Consultar dados pessoais\n2. Cadastrar Usuario e Conta\n3. Retornar\n" << endl;
         cin >> campo;
-
+        cin.clear();
+        cin.ignore();
         switch(campo){
             case 1: consultarDadosPessoais();
                     break;
-            case 2: apresentar = false;
+            case 2: cadastrar();
+                    break;
+            case 3: apresentar = false;
                     break;
         }
     }

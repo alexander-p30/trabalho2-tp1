@@ -6,7 +6,7 @@
 #include "usuario.h"
 
 class CntrServicoAutenticacao:public IServicoAutenticacao {
-private:  
+private:
   static CntrServicoAutenticacao *instancia;
   static CntrContainerUsuario *cntrContainerUsuario;
   static Usuario *usuarioAtual;

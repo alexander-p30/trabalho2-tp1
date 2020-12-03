@@ -5,6 +5,7 @@
 CntrApresentacaoPrincipal* CntrApresentacaoPrincipal::instancia = nullptr;
 CntrApresentacaoAutenticacao* CntrApresentacaoPrincipal::cntrApresentacaoAutenticacao = CntrApresentacaoAutenticacao::getInstancia();
 CntrApresentacaoProduto* CntrApresentacaoPrincipal::cntrApresentacaoProduto = CntrApresentacaoProduto::getInstancia();
+CntrApresentacaoPessoal* CntrApresentacaoPrincipal::cntrApresentacaoPessoal = CntrApresentacaoPessoal::getInstancia();
 
 CntrApresentacaoPrincipal* CntrApresentacaoPrincipal::getInstancia() {
   if(instancia == nullptr) {
@@ -21,7 +22,7 @@ void CntrApresentacaoPrincipal::menu() {
   while(executar) {
     clearscr();
     cout << "Seja bem-vindo(a)!" << endl;
-    cout << "1. Autenticação\n2. Produtos\n0. Fechar" << endl;
+    cout << "1. Autenticação\n2. Produtos\n3. Cadastrar Usuario e Conta\n0. Fechar" << endl;
     cin >> op;
     switch(op) {
       case 1:
@@ -29,6 +30,9 @@ void CntrApresentacaoPrincipal::menu() {
         break;
       case 2:
         cntrApresentacaoProduto->menu();
+        break;
+      case 3:
+        cntrApresentacaoPessoal->executar();
         break;
       case 0:
         executar = false;

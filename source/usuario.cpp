@@ -32,9 +32,7 @@ bool CntrContainerUsuario::cadastrarUsuario(string nome, string endereco, int ce
  Conta *cont = nullptr;
   try {
     usuario = new Usuario(nome, endereco, cep, cpf, senha);
-    cout << "user";
     cont  = new Conta(banco, agencia, numero);
-    cout << "conta";
     usuario->account = cont;
   } catch(const invalid_argument& err) {
     cerr << err.what() << endl;
