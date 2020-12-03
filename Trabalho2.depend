@@ -219,3 +219,118 @@
 	<iostream>
 	<string>
 
+1606829922 source:/home/lucas/UNB/TP1/trabalho3-tp1/source/domains.cpp
+	"../headers/domains.h"
+	<iostream>
+	<ctype.h>
+
+1606829922 /home/lucas/UNB/TP1/trabalho3-tp1/headers/domains.h
+	<string>
+
+1606866106 source:/home/lucas/UNB/TP1/trabalho3-tp1/source/entities.cpp
+	"../headers/entities.h"
+	<iostream>
+
+1606942223 /home/lucas/UNB/TP1/trabalho3-tp1/headers/entities.h
+	"domains.h"
+
+1606829922 source:/home/lucas/UNB/TP1/trabalho3-tp1/source/main.cpp
+	"../tests/domain_tests.h"
+	"../tests/entity_tests.h"
+	<iostream>
+
+1606829922 /home/lucas/UNB/TP1/trabalho3-tp1/tests/domain_tests.h
+	"../headers/domains.h"
+	<string>
+
+1606829922 /home/lucas/UNB/TP1/trabalho3-tp1/tests/entity_tests.h
+	"../headers/entities.h"
+
+1606829922 source:/home/lucas/UNB/TP1/trabalho3-tp1/source/teste.cpp
+
+1606829922 source:/home/lucas/UNB/TP1/trabalho3-tp1/tests/domain_tests.cpp
+	<iostream>
+	<string>
+	"domain_tests.h"
+
+1606943837 source:/home/lucas/UNB/TP1/trabalho3-tp1/tests/entity_tests.cpp
+	<iostream>
+	"entity_tests.h"
+
+1606952508 source:/home/lucas/UNB/TP1/trabalho3-tp1/source/autenticacao.cpp
+	"../headers/autenticacao.h"
+	"../utils/tela.h"
+	<iostream>
+	<string>
+
+1606844356 /home/lucas/UNB/TP1/trabalho3-tp1/headers/autenticacao.h
+	"interfaces.h"
+	"domains.h"
+	"usuario.h"
+
+1606947900 /home/lucas/UNB/TP1/trabalho3-tp1/headers/interfaces.h
+	"entities.h"
+	"containers.h"
+	<string>
+
+1606844356 /home/lucas/UNB/TP1/trabalho3-tp1/headers/containers.h
+	"entities.h"
+	<string>
+	<vector>
+
+1606947879 /home/lucas/UNB/TP1/trabalho3-tp1/headers/usuario.h
+	"interfaces.h"
+	"containers.h"
+	"entities.h"
+
+1606829922 /home/lucas/UNB/TP1/trabalho3-tp1/utils/tela.h
+
+1606844356 source:/home/lucas/UNB/TP1/trabalho3-tp1/source/containers.cpp
+	"../headers/containers.h"
+	<vector>
+	<iostream>
+
+1606960710 source:/home/lucas/UNB/TP1/trabalho3-tp1/source/pessoal.cpp
+	"../headers/pessoal.h"
+	"../utils/tela.h"
+	"../headers/containers.h"
+	"../headers/usuario.h"
+	"../headers/autenticacao.h"
+	<vector>
+	<iostream>
+	<string>
+	<stdlib.h>
+	<curses.h>
+
+1606948677 /home/lucas/UNB/TP1/trabalho3-tp1/headers/pessoal.h
+	"interfaces.h"
+	"domains.h"
+	"../headers/containers.h"
+	"../headers/usuario.h"
+
+1606960732 source:/home/lucas/UNB/TP1/trabalho3-tp1/source/usuario.cpp
+	"../headers/usuario.h"
+	"../headers/containers.h"
+	<iostream>
+
+1606844356 source:/home/lucas/UNB/TP1/trabalho3-tp1/source/produtos.cpp
+	"../headers/produtos.h"
+	"../headers/containers.h"
+	<iostream>
+
+1606844356 /home/lucas/UNB/TP1/trabalho3-tp1/headers/produtos.h
+	"interfaces.h"
+	"containers.h"
+	"entities.h"
+
+1606960798 source:/home/lucas/UNB/TP1/trabalho3-tp1/source/test.cpp
+	"../headers/autenticacao.h"
+	"../headers/usuario.h"
+	"../headers/produtos.h"
+	"../headers/pessoal.h"
+	<iostream>
+	<string>
+
+1606829922 source:/home/lucas/UNB/TP1/trabalho3-tp1/utils/tela.cpp
+	<iostream>
+

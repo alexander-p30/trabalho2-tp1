@@ -12,6 +12,7 @@ private:
 public:
   static CntrContainerUsuario* getInstancia();
   virtual bool criarUsuario(string nome, string endereco, int cep, string cpf, string senha);
+  virtual bool cadastrarUsuario(string nome, string endereco, int cep, string cpf, string senha, string banco, string agencia, string numero);
   virtual bool excluirUsuarioPorCpf(string cpf);
   virtual void listarUsuarios();
   virtual Usuario* buscarUsuarioPorCpf(string cpf);

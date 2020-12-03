@@ -11,7 +11,7 @@ using namespace std;
 
 void buildTesteUsuarios() {
   CntrContainerUsuario *cntrContainerUsuario = CntrContainerUsuario::getInstancia();
-  
+
   string nome = "Estevan Alexander";
   string endereco = "Rua da batata";
   int cep = 1234567;
@@ -59,7 +59,7 @@ void buildTesteProdutos() {
   cout << endl;
 
   cntrContainerProduto->excluirProdutoPorCodigo("321");
-  
+
   cntrContainerProduto->listarProdutos();
 
   cout << endl;
@@ -68,6 +68,15 @@ void buildTesteProdutos() {
 
   cout << produto->getCodigo() << "/" << produto->getEmissor();
 }
+
+void buildTestePessoal() {
+  CntrApresentacaoAutenticacao *cntrApresentacaoAutenticacao = CntrApresentacaoAutenticacao::getInstancia();
+  CntrApresentacaoPessoal *cntrApresentacaoPessoal = CntrApresentacaoPessoal::getInstancia();
+  cntrApresentacaoPessoal->cadastrar();
+  cntrApresentacaoAutenticacao->autenticar();
+  cntrApresentacaoPessoal->executar();
+}
+
 
 int main() {
   CntrApresentacaoPrincipal *cntrApresentacaoPrincipal = CntrApresentacaoPrincipal::getInstancia();

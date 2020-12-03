@@ -3,13 +3,16 @@
 
 #include "interfaces.h"
 #include "domains.h"
+#include "../headers/containers.h"
+#include "../headers/usuario.h"
 
 
 class CntrServicoPessoal:public IServicoPessoal {
     private:
         static CntrServicoPessoal *instancia;
+        static CntrContainerUsuario *cntrContainerUsuario;
     public:
-        bool cadastrarUsuario(string nome, string endereco, int cep, string cpf, string senha);
+        bool cadastrarUsuario(string nome, string endereco, int cep, string cpf, string senha, string banco, string agencia, string numero);
         static CntrServicoPessoal* getInstancia();
 };
 
@@ -20,7 +23,7 @@ class CntrApresentacaoPessoal:public IApresentacaoPessoal{
         void consultarDadosPessoais();
         /*IServicoProdutosFinanceiros *cntrServicoProdutosFinanceiros;*/
     public:
-        void executar(Cpf);
+        void executar();
         void cadastrar();
         void setCntrServicoPessoal(IServicoPessoal*);
         static CntrApresentacaoPessoal* getInstancia();
