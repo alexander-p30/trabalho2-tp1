@@ -32,11 +32,26 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="headers/autenticacao.h" />
+		<Unit filename="headers/containers.h" />
 		<Unit filename="headers/domains.h" />
 		<Unit filename="headers/entities.h" />
+		<Unit filename="headers/interfaces.h" />
+		<Unit filename="headers/pessoal.h" />
+		<Unit filename="headers/produtos.h" />
+		<Unit filename="headers/tela.h" />
+		<Unit filename="headers/usuario.h" />
+		<Unit filename="source/autenticacao.cpp" />
+		<Unit filename="source/containers.cpp" />
 		<Unit filename="source/domains.cpp" />
 		<Unit filename="source/entities.cpp" />
+		<Unit filename="source/interfaces.cpp" />
 		<Unit filename="source/main.cpp" />
+		<Unit filename="source/pessoal.cpp" />
+		<Unit filename="source/produtos.cpp" />
+		<Unit filename="source/tela.cpp" />
+		<Unit filename="source/test.cpp" />
+		<Unit filename="source/usuario.cpp" />
 		<Unit filename="tests/domain_tests.cpp" />
 		<Unit filename="tests/domain_tests.h" />
 		<Unit filename="tests/entity_tests.cpp" />

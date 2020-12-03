@@ -6,36 +6,6 @@
 /**
  * Classe de entidade para usuário
 */
-class Usuario {
-private:
-  Nome nome;
-  Endereco endereco;
-  Cep cep;
-  Cpf cpf;
-  Senha senha;
-public:
-  // Construtores
-  Usuario(
-    string nome,
-    string endereco,
-    int cep,
-    string cpf,
-    string senha
-  );
-  Usuario() {};
-
-  // Getters e setters
-  string getNome() const;
-  void setNome(string nome);
-  string getEndereco() const;
-  void setEndereco(string endereco);
-  int getCep() const;
-  void setCep(int cep);
-  string getCpf() const;
-  void setCpf(string cpf);
-  string getSenha() const;
-  void setSenha(string senha);
-};
 
 /**
  * Classe de entidade para conta
@@ -61,6 +31,42 @@ public:
   void setAgencia(string agencia);
   string getNumero() const;
   void setNumero(string numero);
+};
+
+/**
+ * Classe de entidade para usuário
+*/
+class Usuario {
+private:
+  Nome nome;
+  Endereco endereco;
+  Cep cep;
+  Cpf cpf;
+  Senha senha;
+
+public:
+  // Construtores
+  Usuario(
+    string nome,
+    string endereco,
+    int cep,
+    string cpf,
+    string senha
+  );
+  Conta *account;
+  Usuario() {account = new Conta();}
+
+  // Getters e setters
+  string getNome() const;
+  void setNome(string nome);
+  string getEndereco() const;
+  void setEndereco(string endereco);
+  int getCep() const;
+  void setCep(int cep);
+  string getCpf() const;
+  void setCpf(string cpf);
+  string getSenha() const;
+  void setSenha(string senha);
 };
 
 /**

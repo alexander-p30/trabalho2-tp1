@@ -3,13 +3,20 @@
 #include "../utils/tela.h"
 #include "../headers/containers.h"
 #include "../headers/usuario.h"
+#include "../headers/autenticacao.h"
 #include <vector>
 #include <iostream>
 #include <string>
 #include <stdlib.h>
 #include <curses.h>
 
+using namespace std;
+
 CntrServicoPessoal* CntrServicoPessoal::instancia = nullptr;
+CntrApresentacaoPessoal* CntrApresentacaoPessoal::instancia = nullptr;
+CntrContainerUsuario* CntrServicoPessoal::cntrContainerUsuario = CntrContainerUsuario::getInstancia();
+
+
 
 
 CntrServicoPessoal* CntrServicoPessoal::getInstancia() {
@@ -19,17 +26,22 @@ CntrServicoPessoal* CntrServicoPessoal::getInstancia() {
   return instancia;
 }
 
+CntrApresentacaoPessoal* CntrApresentacaoPessoal::getInstancia() {
+  if(instancia == nullptr){
+    instancia = new CntrApresentacaoPessoal();
+  }
+  return instancia;
+}
 
-bool CntrServicoPessoal::cadastrarUsuario(string nome, string endereco, int cep, string cpf, string senha){
+
+bool CntrServicoPessoal::cadastrarUsuario(string nome, string endereco, int cep, string cpf, string senha, string banco, string agencia, string numero){
   CntrContainerUsuario *cntrContainerUsuario = CntrContainerUsuario::getInstancia();
 
-  return cntrContainerUsuario->criarUsuario(nome, endereco, cep, cpf, senha);
+  return cntrContainerUsuario->cadastrarUsuario(nome, endereco, cep, cpf, senha, banco, agencia, numero);
 }
 
 void CntrApresentacaoPessoal::cadastrar(){
-
-    // Mensagens a serem apresentadas na tela de cadastramento.
-
+    CntrServicoPessoal *cntrServicoPessoal = CntrServicoPessoal::getInstancia();
     char texto1[] ="Preencha os seguintes campos para completar seu cadastramento: ";
     char texto2[] ="Nome            :";
     char texto3[] ="Endereco        :";
@@ -43,31 +55,17 @@ void CntrApresentacaoPessoal::cadastrar(){
     char texto11[]="Sucesso no cadastramento. Digite algo.";
     char texto12[]="Falha no cadastramento. Digite algo.";
 
-    char campo1[80], campo2[80], campo4[80], campo5[80];                            // Cria campos para entrada dos dados.
-    char campo6[80], campo7[80], campo8[80];
-    int campo3;                                                    // Cria campos para entrada dos dados.
-
-    // Instancia os dom�nios.
-
-    Nome nome;
-    Endereco endereco;
-    Cep cep;
-    Cpf cpf;
-    Senha senha;
-    NumeroDeConta numero;
-    CodigoDeAgencia agencia;
-    CodigoDeBanco banco;
-
-    // Apresenta tela de cadastramento.
-
-    clearscr();
+    string campo1, campo2, campo4, campo5;
+    string campo6, campo7, campo8;
+    int campo3;
 
     cout << texto1 << endl;
     cout << texto2 << " ";
-    cin >> campo1;
+    cin.clear();
+    getline(cin, campo1);
     cout << texto3 << " ";
-    cin >> campo2;
-    cout << texto4 << " ";
+    getline(cin, campo2);
+    cout << texto4;
     cin >> campo3;
     cout << texto5 << " ";
     cin >> campo4;
@@ -80,60 +78,70 @@ void CntrApresentacaoPessoal::cadastrar(){
     cout << texto9 << " ";
     cin >> campo8;
 
-    try{
-        nome.setNome(string(campo1));
-        endereco.setEndereco(string(campo2));
-        cep.setNumero(campo3);
-        cpf.setNumero(string(campo4));
-        senha.setSenha(string(campo5));
-        numero.setNumero(string(campo6));
-        agencia.setCodigo(string(campo7));
-        banco.setCodigo(string(campo8));
-    }
-    catch(invalid_argument &exp){
-        cout << texto10 << endl;
-        waitInput();
+    if(cntrServicoPessoal->cadastrarUsuario(campo1, campo2, campo3, campo4, campo5,campo8, campo7, campo6)){
         return;
     }
 
-    Usuario usuario;
-
-    usuario.setNome(string(campo1));
-    usuario.setEndereco(string(campo2));
-    usuario.setCep(int(campo3));
-    usuario.setCpf(string(campo4));
-    usuario.setSenha(string(campo5));
-
-    Conta conta;
-
-    conta.setNumero(string(campo6));
-    conta.setAgencia(string(campo7));
-    conta.setBanco(string(campo8));
-    /*conta.setCpf(string(campo4));
-
-    if(cntrServicoPessoal->cadastrarUsuario(Usuario)){
-        if(cntrServicoProdutosFinanceiros->cadastrarConta(conta)){
-            cout << texto11 << endl;
-            return;
-        }
-      }
-    */
-
-    if(cntrServicoPessoal->cadastrarUsuario(campo1, campo2, campo3, campo4, campo5)){
-        cout << texto11 << endl;
-        return;
-    }
-
-    cout << texto12 << endl;
-    waitInput();
+    //waitInput();
 
     return;
 }
 
-/*void CntrApresentacaoPessoal::consultarDadosPessoais(){
-    char texto2[] ="digite o seu cpf"
-    string cpf;
-    cout << texto2 << " ";
-    cin >> cpf;
+void CntrApresentacaoPessoal::consultarDadosPessoais(){
+    CntrServicoAutenticacao *cntrServicoAutenticacao = CntrServicoAutenticacao::getInstancia();
+    Usuario *current_user = cntrServicoAutenticacao->getUsuarioAtual();
+    Nome nome;
+    Endereco endereco;
+    Cep cep;
+    Cpf cpf;
+    Senha senha;
+    NumeroDeConta numero;
+    CodigoDeAgencia agencia;
+    CodigoDeBanco banco;
+    cout << "dados pessoais" << endl;
+    cout << "Nome: ";
+    cout << current_user->getNome() << endl;
+    cout << "Endereco: ";
+    cout << current_user->getEndereco() << endl;
+    cout << "Cep: ";
+    cout << current_user->getCep() << endl;
+    cout << "Cpf: ";
+    cout << current_user->getCpf() << endl;
+    cout << "Senha: ";
+    cout << current_user->getSenha() << endl;
+    cout << "Numero de conta ";
+    cout << current_user->account->getNumero() << endl;
+    cout << "Codigo de agencia ";
+    cout << current_user->account->getAgencia() << endl;
+    cout << "Codigo de banco ";
+    cout << current_user->account->getBanco() << endl;
+    return;
 
-}*/
+}
+
+void CntrApresentacaoPessoal::executar(){
+
+    char texto1[]="Selecione um dos servicos : ";
+    char texto2[]="1 - Consultar dados pessoais.";
+    char texto3[]="2 - Retornar.";
+
+    int campo;
+    bool apresentar = true;
+
+    while(apresentar){
+
+        clearscr();
+
+        cout << texto1 << endl;
+        cout << texto2 << endl;
+        cout << texto3 << endl;
+        cin >> campo;
+
+        switch(campo){
+            case 1: consultarDadosPessoais();
+                    break;
+            case 2: apresentar = false;
+                    break;
+        }
+    }
+}

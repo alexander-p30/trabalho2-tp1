@@ -15,13 +15,14 @@ public:
 
 class IServicoPessoal{
   public:
-    virtual bool cadastrarUsuario(string nome, string endereco, int cep, string cpf, string senha) = 0;
+    virtual bool cadastrarUsuario(string nome, string endereco, int cep, string cpf, string senha, string banco, string agencia, string numero) = 0;
     virtual ~IServicoPessoal(){}
 };
 
 class IContainerUsuario {
 public:
   virtual bool criarUsuario(string nome, string endereco, int cep, string cpf, string senha) = 0;
+  virtual bool cadastrarUsuario(string nome, string endereco, int cep, string cpf, string senha, string banco, string agencia, string numero) = 0;
   virtual bool excluirUsuarioPorCpf(string cpf) = 0;
   virtual void listarUsuarios() = 0;
   virtual Usuario* buscarUsuarioPorCpf(string cpf) = 0;
@@ -46,7 +47,7 @@ public:
 
 class IApresentacaoPessoal{
   public:
-    virtual void executar(string cpf) = 0;
+    //virtual void executar(string cpf) = 0;
     virtual void cadastrar() = 0;
     virtual void setCntrServicoPessoal(IServicoPessoal*) = 0;
     //virtual void setCntrServicoProdutosFinanceiros(IServicoProdutosFinanceiros*) = 0;

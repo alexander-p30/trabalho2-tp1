@@ -1,4 +1,4 @@
-#include "../headers/autenticacao.h"
+    #include "../headers/autenticacao.h"
 #include "../utils/tela.h"
 #include <iostream>
 #include <string>
@@ -18,9 +18,9 @@ CntrServicoAutenticacao* CntrServicoAutenticacao::getInstancia() {
 }
 
 bool CntrServicoAutenticacao::autenticar(string cpf, string senha) {
-  Usuario *usuario = cntrContainerUsuario->buscarUsuarioPorCpf(cpf); 
+  Usuario *usuario = cntrContainerUsuario->buscarUsuarioPorCpf(cpf);
   if(usuario == nullptr) {
-    return false; 
+    return false;
   }
 
   bool login = usuario->getSenha().compare(senha) == 0;
@@ -68,8 +68,8 @@ bool CntrApresentacaoAutenticacao::autenticar() {
       break;
     }
     cout << "Autenticação falhou. Por favor, tente novamente." << endl;
-    waitInput();    
+    waitInput();
   }
 
-  return true;  
+  return true;
 }

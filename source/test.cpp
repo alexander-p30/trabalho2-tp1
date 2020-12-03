@@ -9,7 +9,7 @@ using namespace std;
 
 void buildTesteUsuarios() {
   CntrContainerUsuario *cntrContainerUsuario = CntrContainerUsuario::getInstancia();
-  
+
   string nome = "Estevan Alexander";
   string endereco = "Rua da batata";
   int cep = 1234567;
@@ -57,7 +57,7 @@ void buildTesteProdutos() {
   cout << endl;
 
   cntrContainerProduto->excluirProdutoPorCodigo("321");
-  
+
   cntrContainerProduto->listarProdutos();
 
   cout << endl;
@@ -67,16 +67,58 @@ void buildTesteProdutos() {
   cout << produto->getCodigo() << "/" << produto->getEmissor();
 }
 
+void buildTestePessoal() {
+  CntrApresentacaoAutenticacao *cntrApresentacaoAutenticacao = CntrApresentacaoAutenticacao::getInstancia();
+  CntrApresentacaoPessoal *cntrApresentacaoPessoal = CntrApresentacaoPessoal::getInstancia();
+  cntrApresentacaoPessoal->cadastrar();
+  cntrApresentacaoAutenticacao->autenticar();
+  cntrApresentacaoPessoal->executar();
+}
+
+
 int main() {
   CntrServicoAutenticacao *cntrServicoAutenticacao = CntrServicoAutenticacao::getInstancia();
   CntrApresentacaoAutenticacao *cntrApresentacaoAutenticacao = CntrApresentacaoAutenticacao::getInstancia();
+  CntrApresentacaoPessoal *cntrApresentacaoPessoal = CntrApresentacaoPessoal::getInstancia();
+  CntrServicoPessoal *cntrServicoPessoal = CntrServicoPessoal::getInstancia();
+  CntrContainerUsuario *cntrContainerUsuario = CntrContainerUsuario::getInstancia();
+
 
   buildTesteUsuarios();
   buildTesteProdutos();
-  // cntrApresentacaoAutenticacao->autenticar();
-// 
-  // cout << cntrServicoAutenticacao->getUsuarioAtual()->getNome() << endl;
-  // cout << cntrServicoAutenticacao->getUsuarioAtual()->getCpf() << endl;
+  buildTestePessoal();
+
+
+  /*cntrApresentacaoPessoal->cadastrar();
+  Usuario *current_user;
+  current_user = cntrContainerUsuario->buscarUsuarioPorCpf("031.360.531-92");
+  cout << "dados pessoais" << endl;
+    cout << "Nome: ";
+    cout << current_user->getNome() << endl;
+    cout << "Endereco: ";
+    cout << current_user->getEndereco() << endl;
+    cout << "Cep: ";
+    cout << current_user->getCep() << endl;
+    cout << "Cpf: ";
+    cout << current_user->getCpf() << endl;
+    cout << "Senha: ";
+    cout << current_user->getSenha() << endl;
+    cout << "Numero de conta ";
+    cout << current_user->account->getNumero() << endl;
+    cout << "Codigo de agencia ";
+    cout << current_user->account->getAgencia() << endl;
+    cout << "Codigo de banco ";
+    cout << current_user->account->getBanco() << endl;
+  cntrApresentacaoAutenticacao->autenticar();
+  cout << cntrServicoAutenticacao->getUsuarioAtual()->getNome() << endl;
+  cout << cntrServicoAutenticacao->getUsuarioAtual()->getCpf() << endl;
+  cntrApresentacaoPessoal->executar();
+
+
+  /*a->cadastrar();
+  cntrApresentacaoAutenticacao->autenticar();
+  cout << cntrServicoAutenticacao->getUsuarioAtual()->getNome() << endl;
+  cout << cntrServicoAutenticacao->getUsuarioAtual()->getCpf() << endl;*/
 
   return 0;
 }

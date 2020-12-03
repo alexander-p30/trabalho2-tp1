@@ -33,6 +33,29 @@ bool CntrContainerUsuario::criarUsuario(string nome, string endereco, int cep, s
   return usuarioCriado;
 }
 
+bool CntrContainerUsuario::cadastrarUsuario(string nome, string endereco, int cep, string cpf, string senha, string banco, string agencia, string numero) {
+ Usuario *usuario = nullptr;
+ Conta *cont = nullptr;
+  try {
+    usuario = new Usuario(nome, endereco, cep, cpf, senha);
+    cout << "user";
+    cont  = new Conta(banco, agencia, numero);
+    cout << "conta";
+    usuario->account = cont;
+  } catch(const invalid_argument& err) {
+    cerr << err.what() << endl;
+    return false;
+  }
+
+  bool usuarioCriado = containerUsuario->addUsuario(*usuario);
+  if(usuarioCriado) {
+    cout << "Usuário e conta criados com sucesso!" << endl;
+  } else {
+    cout << "Falha ao criar usuário: cpf " << cpf << " já utilizado." << endl;
+  }
+  return usuarioCriado;
+}
+
 bool CntrContainerUsuario::excluirUsuarioPorCpf(string cpf) {
   if(containerUsuario->remUsuarioPorCpf(cpf)) {
     cout << "Usuário com cpf " << cpf << " excluído com sucesso!" << endl;
